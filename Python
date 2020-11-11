@@ -1,0 +1,4 @@
+//String concatenation amd manepulations input with print statement as prompt
+
+print("Hello "+input("What is your name?"))
+
