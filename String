@@ -1,0 +1,5 @@
+#input will get the user input in console
+#Then print() will print the word "Hello" and user input
+ 
+print("Hello "+input("What is you name: "))
+
