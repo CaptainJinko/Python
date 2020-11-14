@@ -33,6 +33,6 @@ print(length)
 #   https://band-name-generator-end.appbrewery.repl.run/
 
 print("Hello Welcome to programe generator")
-yourCity=input("Which city your grew up in:?")
+yourCity=input("Which city you grew up in:?")
 pet=input("What is the name of yor pet")
 print("your band name is "+yourCity+" "+pet)
