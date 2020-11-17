@@ -1,0 +1,57 @@
+//the formula is weight/height sqaurw
+height=float(input("Enter your height in m: "))
+weight=float(input("Enter your weight in kg: "))
+
+answerOfBmi=int(weight)/float(height)**2
+print(float(answerOfBmi))
+
+#Converting it into whole number int 
+--------------------------------------------------------------------------------------
+height=float(input("Enter your height in m: "))
+weight=float(input("Enter your weight in kg: "))
+
+Bmi=int(weight)/float(height)**2
+Bmi_as_int= int(Bmi)
+print( Bmi_as_int )
+------------------------------------------------------------------------------------
+# 🚨 Don't change the code below 👇
+height = input("enter your height in m: ")
+weight = input("enter your weight in kg: ")
+# 🚨 Don't change the code above 👆
+
+#Write your code below this line 👇
+
+weight_as_int = int(weight)
+height_as_float = float(height)
+
+# Using the exponent operator **
+bmi = weight_as_int / height_as_float ** 2
+# or using multiplication and PEMDAS
+bmi = weight_as_int / (height_as_float * height_as_float)
+
+bmi_as_int = int(bmi)
+
+print(bmi_as_int)
+---------------------------------------------------------------------------------------
+height=float(input("Enter your height in m: "))
+weight=float(input("Enter your weight in kg: "))
+
+Bmi=int(weight)/float(height)**2
+Bmi_as_int= int(Bmi)
+print("your mbi is "+str(Bmi))
+----------------------------------------------------------------------------------------
+
+#Number maipulation and F String in Python
+
+#print(8/3)          #Result 2.666666666665
+#print(8//3)            # 3 without having to convert it to interger
+#print(int(8/3))     #2
+#print(round(8/3))   #3
+#print(round(8/3, 2))  # 2.67 it will be rounded by two dicimal places 
+
+# result=(4/2)
+# # print(result) 
+# result= result/2  # short form: result/=2, result-=2, result+=7
+# print(result)
+# result+=7
+# print(result)
