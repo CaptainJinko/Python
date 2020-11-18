@@ -101,6 +101,35 @@ isWinning=True
 print(f"Your score {score}, your heightis {height}, your are winning is {isWinning} ")
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+name="Elias"
+age=53
+proffession="Software Developer"
+print(f"My name is {name} a {proffession} and i am {age} of age" )
+-------------------------------------------------------------------------------------------------------------------
+#Interative code life in weeks
+
+age=int(input("What is you current age?"))
+age_as_int=int(age)
+years_remaining= 90-age_as_int
+days_remaining=years_remaining *365
+weeks_remaining= years_remaining*52
+months_remaining=years_remaining*12
+print(f"You have {days_remaining} days {weeks_remaining} weeks and {months_remaining} months remaining " )
+------------------------------------------------------------------------------------------------------------------
+
+age=int(input("What is you current age?"))
+age_as_int=int(age)
+years_remaining= 90-age_as_int
+days_remaining=years_remaining *365
+weeks_remaining= years_remaining*52
+months_remaining=years_remaining*12
+message=(f"You have {days_remaining} days {weeks_remaining} weeks and {months_remaining} months remaining " )
+
+print(message)
+-------------------------------------------------------------------------------------------------------------------
+
+
+
 
 
 
