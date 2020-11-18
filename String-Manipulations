@@ -36,7 +36,7 @@ print("Hello Welcome to programe generator")
 yourCity=input("Which city you grew up in:?\n")   #take note of \n to place the cursor on the next line
 pet=input("What is the name of yor pet?\n")
 print("your band name is "+yourCity+" "+pet)
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //casting 
 numberOfChar=len(input("What is your name?"))
 print("you name has "+str(numberOfChar)+ " characters ")
@@ -57,7 +57,7 @@ print(type(a))  # it will print <class 'float'>
 
 a= float(12345)   #casting or concerting it will print <class <float>>
 print(type(a)) 
-------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #interactive challenge
 
 # 🚨 Don't change the code below 👇
@@ -105,7 +105,7 @@ name="Elias"
 age=53
 proffession="Software Developer"
 print(f"My name is {name} a {proffession} and i am {age} of age" )
--------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Interative code life in weeks
 
 age=int(input("What is you current age?"))
@@ -115,7 +115,7 @@ days_remaining=years_remaining *365
 weeks_remaining= years_remaining*52
 months_remaining=years_remaining*12
 print(f"You have {days_remaining} days {weeks_remaining} weeks and {months_remaining} months remaining " )
-------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 age=int(input("What is you current age?"))
 age_as_int=int(age)
@@ -126,8 +126,11 @@ months_remaining=years_remaining*12
 message=(f"You have {days_remaining} days {weeks_remaining} weeks and {months_remaining} months remaining " )
 
 print(message)
--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#rounding off
 
+x = 3.14159265
+print(f'pi = {x:.2f}')    #.2f will round it ti 2 decemal points 
 
 
 
