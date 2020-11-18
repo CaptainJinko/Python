@@ -7,15 +7,15 @@ print("Hello "+input("What is you name: "))
 #len() is a function which will calculate length
 #input will take in input from the user
 print(len(input("What is your name?")))
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# print(name)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- p
+print(name)
 
-# name="Angela"
-# print(name)
+name="Angela"
+print(name)
 
-# name=input("What is your name ?")
-# length=len(name)
-# print(length)
+name=input("What is your name ?")
+length=len(name)
+print(length)
 
 name =input("What is your name")
 length=len(name)
@@ -36,16 +36,16 @@ print("Hello Welcome to programe generator")
 yourCity=input("Which city you grew up in:?\n")   #take note of \n to place the cursor on the next line
 pet=input("What is the name of yor pet?\n")
 print("your band name is "+yourCity+" "+pet)
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //casting 
 numberOfChar=len(input("What is your name?"))
-print("you name has "+str(numberOfChar)+ " characters ")
+print("your name has "+str(numberOfChar)+ " characters ")
 
-# primitive data type checking 
-# new_char=str(numberOfChar)
-# print("Your name is has "+new_char+"Characters")
+primitive data type checking 
+new_char=str(numberOfChar)
+print("Your name is has "+new_char+"Characters")
 
-#checking
+checking
 a=123456
 print(type(a)) #it will print <class 'int>
 
@@ -57,7 +57,7 @@ print(type(a))  # it will print <class 'float'>
 
 a= float(12345)   #casting or concerting it will print <class <float>>
 print(type(a)) 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
 #interactive challenge
 
 # 🚨 Don't change the code below 👇
@@ -78,62 +78,4 @@ second_digit = int(two_digit_number[1])
 two_digit_number = first_digit + second_digit
 
 print(two_digit_number)
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# weight=float(input("Enter your weight in kg:\n"))
-# height=float(input("Enter your height in m:\n"))
-# bmi=float(weight/(height**2))
-# print(round(float(bmi)))
-
-#short form 
-
-score=0
-score+=1   # output will be 1
-score-=3
-output will be -3
-score *=6   output will be multiplt 6 by the score=0 which is zero    
-print(score)
-#F-String
-
-score=0
-height=1.8
-isWinning=True
-
-print(f"Your score {score}, your heightis {height}, your are winning is {isWinning} ")
-
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-name="Elias"
-age=53
-proffession="Software Developer"
-print(f"My name is {name} a {proffession} and i am {age} of age" )
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Interative code life in weeks
-
-age=int(input("What is you current age?"))
-age_as_int=int(age)
-years_remaining= 90-age_as_int
-days_remaining=years_remaining *365
-weeks_remaining= years_remaining*52
-months_remaining=years_remaining*12
-print(f"You have {days_remaining} days {weeks_remaining} weeks and {months_remaining} months remaining " )
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-age=int(input("What is you current age?"))
-age_as_int=int(age)
-years_remaining= 90-age_as_int
-days_remaining=years_remaining *365
-weeks_remaining= years_remaining*52
-months_remaining=years_remaining*12
-message=(f"You have {days_remaining} days {weeks_remaining} weeks and {months_remaining} months remaining " )
-
-print(message)
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#rounding off
-
-x = 3.14159265
-print(f'pi = {x:.2f}')    #.2f will round it ti 2 decemal points 
-
-
-
-
-
 
