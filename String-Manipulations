@@ -78,4 +78,30 @@ second_digit = int(two_digit_number[1])
 two_digit_number = first_digit + second_digit
 
 print(two_digit_number)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# weight=float(input("Enter your weight in kg:\n"))
+# height=float(input("Enter your height in m:\n"))
+# bmi=float(weight/(height**2))
+# print(round(float(bmi)))
+
+#short form 
+
+score=0
+score+=1   # output will be 1
+score-=3
+output will be -3
+score *=6   output will be multiplt 6 by the score=0 which is zero    
+print(score)
+#F-String
+
+score=0
+height=1.8
+isWinning=True
+
+print(f"Your score {score}, your heightis {height}, your are winning is {isWinning} ")
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 
