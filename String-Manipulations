@@ -57,14 +57,14 @@ print(type(a))  # it will print <class 'float'>
 
 a= float(12345)   #casting or concerting it will print <class <float>>
 print(type(a)) 
-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #interactive challenge
 
 # 🚨 Don't change the code below 👇
 two_digit_number = input("Type a two digit number: ")
 # 🚨 Don't change the code above 👆
 
-####################################
+#################################################################################################################################################################################
 #Write your code below this line 👇
 
 #Check the data type of two_digit_number
