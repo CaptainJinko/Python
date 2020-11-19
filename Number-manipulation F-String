@@ -49,9 +49,25 @@ print("your mbi is "+str(Bmi))
 #print(round(8/3))   #3
 #print(round(8/3, 2))  # 2.67 it will be rounded by two dicimal places 
 
-# result=(4/2)
-# # print(result) 
+result=(4/2)
+# print(result) 
 # result= result/2  # short form: result/=2, result-=2, result+=7
 # print(result)
 # result+=7
 # print(result)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#challenge
+#Welcome to the tip calculator
+#Waht was the total bill? 124.56
+#What percentage would like to give? 10, 12, or 15? 
+# How many people to split the bill 7
+#Each person should pay: $19:93
+
+
+print("Welcome to the tip calculator!")
+bill=float(input("what was the total bill? $ " ))
+tip=int(input("what percentage tip you like to give? 10, 12, 15, or 12?"))
+people= int(input("Howe many people to split the bill"))
+bill_with_tip=tip/100*bill+bill
+print(bill_with_tip)
