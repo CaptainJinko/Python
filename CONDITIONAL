@@ -69,3 +69,29 @@ else:
   print("Sorry have you to grow taller before you can ride") 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CHALLENGE
+Write a programe that interpret Body mass index
+base on the user weight and height.
+It should tell them the interptretation of their bmi base on the BMI value
+Under 18.5 they underweight
+Over 18.5 below 25 they have normal weight
+Over 25 but below 30 they overweight
+Over 30 but below 35 they obese
+Above 35 they are clinically obese
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Solution to Challenge
+print("Welcome to BMI Calculator!! ")
+weight=float(input("Enter your weight in kg:\n"))
+height=float(input("Enter you height in m:\n"))
+bmi=round(weight/height*height)
+if bmi < 18.5:
+  print(f"Your bmi is {bmi}, you are underWeight")
+elif bmi < 25:
+  print(f"Your bmi is {bmi}, you have normal weight")
+elif bmi <30:
+  print(f"Your bmi is {bmi},you are overweight ")
+elif bmi <35:
+  print(f"your bmi is {bmi}, you are obese")
+else:
+  print(f" your bmi is {bmi} You are clinically obese")  
+    
