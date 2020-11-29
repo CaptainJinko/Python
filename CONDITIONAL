@@ -68,7 +68,7 @@ if height >=120:
 else:
   print("Sorry have you to grow taller before you can ride") 
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CHALLENGE
 Write a programe that interpret Body mass index
 base on the user weight and height.
@@ -78,7 +78,7 @@ Over 18.5 below 25 they have normal weight
 Over 25 but below 30 they overweight
 Over 30 but below 35 they obese
 Above 35 they are clinically obese
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Solution to Challenge
 print("Welcome to BMI Calculator!! ")
 weight=float(input("Enter your weight in kg:\n"))
@@ -221,7 +221,7 @@ if extra_cheese == "N":
 else:
   bill+=1
   print(f"Your totall bill with extra chesse is {bill} ") 
--------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 print("Welcome to Python Pizza Deliveries!")
 size=input("What size pizza do you want? S, M, L\n")
 add_pepperoni=input("Do you want pepperoni?\n")
