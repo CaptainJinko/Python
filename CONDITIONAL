@@ -168,4 +168,86 @@ Example Output
 Your final bill is: $28.
 Your final bill is: $28.
 e.g. When you hit run, this is what should happen:
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+print("Welcome to Python Pizza Deliveries!")
+size=input("What size pizza do you want? S, M, L\n")
+add_pepperoni=input("Do you want pepperoni?\n")
+extra_cheese=input("Do you want extra cheese\n")
+
+bill=0
+
+if size =="S":
+  bill+=15
+elif size=="M":
+  bill+=20
+else:
+  bill+=25
+if add_pepperoni == "Y":
+  if size == "S":
+    bill+=2
+  else:
+    bill +=3
+
+if extra_cheese =="Y":
+  bill +=1
+print(f"Your final bill is $ {bill} ")          
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+print("Welcome to Python Pizza Deliveries!")
+size=input("What size pizza do you want? S, M, L\n")
+add_pepperoni=input("Do you want pepperoni?\n")
+extra_cheese=input("Do you want extra cheese\n")
+
+bill=0
+
+if size =="S":
+  bill=15
+  print("The price of small is $ 15.00")
+if size == "M":
+  bill=20
+  print("The price of Medium is $ 20.00")
+if size == "L":
+  bill=25
+  print("The price of large is $ 25.00")
+if add_pepperoni== "Y":
+  bill +=2
+  print("Pepperoni for smalll pizza is $ 2.00")
+else:
+    bill+=3
+    print("Pepperoni for medium pizza is $ 3.00")
+if extra_cheese == "N":
+   print(f"Your total bill is {bill} ")
+else:
+  bill+=1
+  print(f"Your totall bill with extra chesse is {bill} ") 
+-------------------------------------------------------------------------
+print("Welcome to Python Pizza Deliveries!")
+size=input("What size pizza do you want? S, M, L\n")
+add_pepperoni=input("Do you want pepperoni?\n")
+extra_cheese=input("Do you want extra cheese\n")
+
+bill=0
+
+if size =="S":
+  bill=15
+  print("The price of small is $ 15.00")
+if size == "M":
+  bill=20
+  print("The price of Medium is $ 20.00")
+if size == "L":
+  bill=25
+  print("The price of large is $ 25.00")
+if add_pepperoni== "Y":
+  bill +=2
+  print("Pepperoni for smalll pizza is $ 2.00")
+if add_pepperoni =="S": 
+    bill+=3
+    print("Pepperoni for medium pizza is $ 3.00")
+if extra_cheese == "N":
+   print(f"Your total bill is {bill} ")
+else:
+  bill+=1
+  print(f"Your totall bill with extra chesse is {bill} ") 
+
+ 
