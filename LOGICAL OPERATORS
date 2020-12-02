@@ -68,7 +68,7 @@ Your score is 73.
 Your score is 73.
 
 e.g. When you hit run, this is what should happen:
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 print('Welcome to the Love Calculator')
 name1=input("What is your name?\n")
 name2=input("What is their name?\n")
