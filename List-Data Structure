@@ -1,0 +1,32 @@
+List in python can be called Data Structure
+
+states_of_america =["Delaware", "Pennsylvania", "New Jersey", "Georgia", "Connecticut", "Massachusetts", "Maryland", 
+"South Carolina", "New Hampshire", "Virginia", "New York", "North Carolina", "Rhode Island", "Vermont", "Kentucky", 
+"Tennessee", "Ohio", "Louisiana", "Indiana", "Mississippi", "Illinois", "Alabama", "Maine", "Missouri", "Arkansas", 
+"Michigan", "Florida", "Texas", "Iowa", "Wisconsin", "California", "Minnesota", "Oregon", "Kansas", "West Virginia", 
+"Nevada", "Nebraska", "Colorado", "North Dakota", "South Dakota", "Montana", "Washington", "Idaho", "Wyoming", "Utah", 
+"Oklahoma", "New Mexico", "Arizona", "Alaska", "Hawaii"]
+
+list start from zero, 0.List is created list name Eg Elias=["Hello ", "Mama"], You can also used negative number -1 to ask for 
+an item from the list. in that case it will sart from the end of the list. -1 is Hawaii index in this list. -2 is Alaska
+in this list etc
+--------------------------------------------------------------------------------------------------------------------
+
+import random
+
+# Split string method
+names_string = input("Give me everybody's names, seperated by a comma. ")
+names = names_string.split(", ")
+
+#Write your code below this line 👇
+
+#Get the total number of items in list.
+num_items = len(names)
+#Generate random numbers between 0 and the last index. 
+random_choice = random.randint(0, num_items - 1)
+#Pick out random person from list of names using the random number.
+person_who_will_pay = names[random_choice]
+
+print(person_who_will_pay + " is going to buy the meal today!")
+
+
