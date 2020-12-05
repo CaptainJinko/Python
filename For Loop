@@ -47,7 +47,7 @@ print(total_heights)
 number_of_students=len(student_heights)
 average_height=round(total_heights/number_of_students)
 print(average_height) 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Highest Score
 Instructions
 You are going to write a program that calculates the highest score from a List of scores.
@@ -58,4 +58,18 @@ Example Input
 78 65 89 86 55 91 64 89
 78 65 89 86 55 91 64 89
 In this case, student_scores would be a list that looks like: [78, 65, 89, 86, 55, 91, 64, 89]
--------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+student_scores=input("Input the a list of student height\n").split()
+for n in range (0, len(student_scores)):
+  student_scores[n]=int(student_scores[n]) 
+
+print(student_scores)
+
+highest_score=0
+for score in student_scores:
+  if score > highest_score:
+   highest_score=score   
+
+print(f"The hihest score is {highest_score}")   
+
+
