@@ -8,7 +8,7 @@ fruits=["Apple", "Peach", "Pear"]
 for fruit in fruits:
   print(fruit)
   print(fruit + "pie")
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 fruits=["Apple", "Peach", "Pear"]
 for fruit in fruits:
   print(fruit)
@@ -71,7 +71,7 @@ for score in student_scores:
    highest_score=score   
 
 print(f"The hihest score is {highest_score}")   
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Adding Evens
 Instructions
 You are going to write a program that calculates the sum of all the even numbers from 1 to 100, including 1 and 100.
@@ -79,7 +79,7 @@ e.g. 2 + 4 + 6 + 8 +10 ... + 98 + 100
 Important, there should only be 1 print statement in your console output. It should just print the final total and not every step of the calculation.
 Hint
 There are quite a few ways of solving this problem, but you will need to use the range() function in any of the solutions.
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Write your code below this row 👇
 
 even_sum = 0
@@ -96,7 +96,7 @@ for number in range(1, 101):
     # print(number)
     alternative_sum += number
 print(alternative_sum)
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 FizzBuzz
 Instructions
 You are going to write a program that automatically prints the solution to the FizzBuzz game.
@@ -105,7 +105,7 @@ When the number is divisible by 3 then instead of printing the number it should 
 `When the number is divisible by 5, then instead of printing the number it should print "Buzz".` 
 `When the number is divisible by 5, then instead of printing the number it should print "Buzz".` 
 `And if the number is divisible by both 3 and 5 e.g. 15 then instead of the number it should print "FizzBuzz"`
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 totalBuzz_number=0
 
 for totalBuzz_number in range(1, 101):
