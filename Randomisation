@@ -1,5 +1,30 @@
 integer_random= random.randint(1, 25)
 print("your randon is "+str(integer_random))
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Python3 code to demonstrate 
+# to generate random number list
+# using list comprehension + randrange()
+import random
+ 
+# using list comprehension + randrange() 
+# to generate random number list
+res = [random.randrange(1, 50, 1) for i in range(7)]
+ 
+# printing result
+print ("Random number list is : " +  str(res))
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Python3 code to demonstrate 
+# to generate random number list
+# using random.sample()
+import random
+
+# using random.sample()
+# to generate random number list
+res = random.sample(range(1, 50), 7)
+
+# printing result
+print ("Random number list is : " + str(res))
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //main.py
 
