@@ -109,7 +109,6 @@ while number_of_hurdles >0:
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Challenge using Reeborg's worlds editor hurdle 2
 
-import random
 def turn_right():
     turn_left()
     turn_left()
