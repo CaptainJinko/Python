@@ -64,3 +64,96 @@ for _ in chosen_word:
    display+=""
 print(display)
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+import random
+word_list=["aadrvark","baboon","camel"]
+
+chosen_word=random.choice(word_list)
+
+print(f"Pssst, the solution is {chosen_word}.")
+guess=input("Guess a letter\n").lower()
+
+
+display=[]
+for letter in chosen_word:    #we are not using the variable letter, alternatively we can use _
+    display+="_"
+print(display)
+
+---------------------------------------------------------------------
+import random
+word_list=["aadrvark","baboon","camel"]
+
+chosen_word=random.choice(word_list)
+
+print(f"Pssst, the solution is {chosen_word}.")
+guess=input("Guess a letter\n").lower()
+
+
+display=[]
+for _ in chosen_word:
+    display+="_"
+print(display)
+
+------------------------------------------------------------------------
+#Using the range function
+
+import random
+word_list=["aadrvark","baboon","camel"]
+
+chosen_word=random.choice(word_list)
+
+print(f"Pssst, the solution is {chosen_word}.")
+guess=input("Guess a letter\n").lower()
+
+
+display=[]
+for _ in range(len(chosen_word)):
+    display+="_"
+print(display)
+-----------------------------------------------------------------------
+#final stage
+
+import random
+word_list=["aadrvark","baboon","camel"]
+
+chosen_word=random.choice(word_list)
+
+print(f"Pssst, the solution is {chosen_word}.")
+
+display=[]
+for _ in range(len(chosen_word)):
+    display+="_"
+print(display)
+
+guess=input("Guess a letter\n").lower()
+
+
+for position in range(len(chosen_word)):
+    letter=chosen_word[position]
+    if letter==guess:
+        display[position]=letter
+print(display)        
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#You can create a variable as word_length=len(chosen_word) 
+
+import random
+word_list=["aadrvark","baboon","camel"]
+
+chosen_word=random.choice(word_list)
+
+print(f"Pssst, the solution is {chosen_word}.")
+
+display=[]
+word_length=len(chosen_word)
+for _ in range(word_length):
+    display+="_"
+print(display)
+
+guess=input("Guess a letter\n").lower()
+
+
+for position in range(word_length):
+    letter=chosen_word[position]
+    if letter==guess:
+        display[position]=letter
+print(display)        
+ --------------------------------------------------------------------------------------------------------------------------------------------------------------
