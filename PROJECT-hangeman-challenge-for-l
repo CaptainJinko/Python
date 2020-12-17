@@ -1,4 +1,4 @@
-#word_list = ["aardvark", "baboon", "camel"]
+word_list = ["aardvark", "baboon", "camel"]
 
 #TODO-1 - Randomly choose a word from the word_list and assign it to a variable called chosen_word.
 import random
@@ -13,7 +13,7 @@ for letter in chosen_word:
         print("Right")
     else:
         print("Wrong")
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Project Hangman step 2
 
 #Step 2
@@ -35,7 +35,6 @@ for _ in range(word_length):
 
 guess = input("Guess a letter: ").lower()
 
-
 #TODO-2: - Loop through each position in the chosen_word;
 #If the letter at that position matches 'guess' then reveal that letter in the display at that position.
 #e.g. If the user guessed "p" and the chosen word was "apple", then display should be ["_", "p", "p", "_", "_"].
@@ -48,112 +47,19 @@ if letter == guess:
 #TODO-3: - Print 'display' and you should see the guessed letter in the correct position and every other letter replace with "_".
 #Hint - Don't worry about getting the user to guess the next letter. We'll tackle that in step 3.
 print(display)
+ 
 
-
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #you can also used 
 
-display=[]
+d isplay=[]
 for letter in chosen_word:
      display+= "_"
 print(display) 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #We are not using the the variable letter here, alternatively we can use 
 display=[]
 for _ in chosen_word:
    display+=""
 print(display)
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-import random
-word_list=["aadrvark","baboon","camel"]
-
-chosen_word=random.choice(word_list)
-
-print(f"Pssst, the solution is {chosen_word}.")
-guess=input("Guess a letter\n").lower()
-
-
-display=[]
-for letter in chosen_word:    #we are not using the variable letter, alternatively we can use _
-    display+="_"
-print(display)
-
----------------------------------------------------------------------
-import random
-word_list=["aadrvark","baboon","camel"]
-
-chosen_word=random.choice(word_list)
-
-print(f"Pssst, the solution is {chosen_word}.")
-guess=input("Guess a letter\n").lower()
-
-
-display=[]
-for _ in chosen_word:
-    display+="_"
-print(display)
-
-------------------------------------------------------------------------
-#Using the range function
-
-import random
-word_list=["aadrvark","baboon","camel"]
-
-chosen_word=random.choice(word_list)
-
-print(f"Pssst, the solution is {chosen_word}.")
-guess=input("Guess a letter\n").lower()
-
-
-display=[]
-for _ in range(len(chosen_word)):
-    display+="_"
-print(display)
------------------------------------------------------------------------
-#final stage
-
-import random
-word_list=["aadrvark","baboon","camel"]
-
-chosen_word=random.choice(word_list)
-
-print(f"Pssst, the solution is {chosen_word}.")
-
-display=[]
-for _ in range(len(chosen_word)):
-    display+="_"
-print(display)
-
-guess=input("Guess a letter\n").lower()
-
-
-for position in range(len(chosen_word)):
-    letter=chosen_word[position]
-    if letter==guess:
-        display[position]=letter
-print(display)        
----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#You can create a variable as word_length=len(chosen_word) 
-
-import random
-word_list=["aadrvark","baboon","camel"]
-
-chosen_word=random.choice(word_list)
-
-print(f"Pssst, the solution is {chosen_word}.")
-
-display=[]
-word_length=len(chosen_word)
-for _ in range(word_length):
-    display+="_"
-print(display)
-
-guess=input("Guess a letter\n").lower()
-
-
-for position in range(word_length):
-    letter=chosen_word[position]
-    if letter==guess:
-        display[position]=letter
-print(display)        
- --------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
