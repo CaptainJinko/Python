@@ -75,32 +75,38 @@ for position in range(word_length):
 
 print(display)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Third stage when all the letter are correctly guessed the game is won No comments 
+#Third stage when all the letter are correctly guessed the game is won No comments, tell the user either he loses or win
 import random
-word_list=["aardvark", "baboon", "camel"]
-chosen_word=random.choice(word_list)
 
+word_list=["elias", "adam", "jinko","schiedam"]
+chosen_word=random.choice(word_list)
+lives=6
 print(f"Pssst the solution is {chosen_word}")
-word_length=len(chosen_word)
 
 display=[]
+word_length=len(chosen_word)
 for _ in range(word_length):
     display+="_"
 
-end_of_game=False
-while not end_of_game:
+end_of_game_game=False
+while not end_of_game_game:
     guess=input("Guess a letter.").lower()
 
     for position in range(word_length):
         letter=chosen_word[position]
-        print(f"Current position:{position},\n current letter:{letter}\nGussed letter:{guess}")
+            
         if letter == guess:
             display[position]=letter
 
+    if guess not in chosen_word:
+        lives-=1
+        end_of_game_game=True
+        print("You lose")
+
     print(display)
-    if "_" not in display:     
-       end_of_game=True
-       print("You have won")
+    if "_" not in display:
+        end_of_game_game=True
+        print("You win")
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #you can also used 
 
