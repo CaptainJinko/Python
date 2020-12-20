@@ -1,0 +1,63 @@
+# Review: 
+# Create a function called greet(). 
+# Write 3 print statements inside the function.
+# Call the greet() function and run your code.
+
+def greet():
+
+    print("Good morning Elias ")
+    print("How are doing?")
+    print("Hello World of python")
+ 
+greet() # we can call thi s function mannytime
+#Function that allows for input
+
+def greet_with_name(name):
+    print(f"Good morning{name}")
+    print(f"How are doing?{name}")
+    print(f"Hello World of python{name}")
+
+greet_with_name(" Elias Jinko")
+
+
+def greet_with_name(name, location):
+    print(f"Hello {name}")
+    print(f"How are doing in {location}")
+
+greet_with_name("Elias","Amsterdam")
+
+Positional Arguments
+
+def my_function(a,b,c):
+    do something with a=1
+    do something with b=2
+    do something with c=3
+    
+my_function(1, 2, 3)
+
+Keyword Arguments
+
+my_function(a=1, b=2, c=3)  
+
+
+def greet_with_name(name, location):
+       
+    print(f"Hello {name} ")
+    print(f"What is the weather in {location}")
+
+greet_with_name(name="Elias", location="Schiedam")
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+import math
+
+def paint_calc(height, width, cover):
+    num_cans = (height * width) / cover
+    round_up_cans = math.ceil(num_cans)
+    print(f"You'll need {round_up_cans} cans of paint.")
+
+
+
+test_h = int(input("Height of wall: "))
+test_w = int(input("Width of wall: "))
+coverage = 5
+paint_calc(height=test_h, width=test_w, cover=coverage)
