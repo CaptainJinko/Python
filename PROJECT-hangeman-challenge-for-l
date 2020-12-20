@@ -256,6 +256,7 @@ while not end_of_game:
     from hangman_art import stages
     print(stages[lives])
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#final and improved version  
 import random
 from hangman_art import stages, logo
 from hangman_words import word_list
