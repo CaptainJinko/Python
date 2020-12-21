@@ -47,7 +47,6 @@ def greet_with_name(name, location):
 
 greet_with_name(name="Elias", location="Schiedam")
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 import math
 
 def paint_calc(height, width, cover):
@@ -55,9 +54,26 @@ def paint_calc(height, width, cover):
     round_up_cans = math.ceil(num_cans)
     print(f"You'll need {round_up_cans} cans of paint.")
 
-
-
 test_h = int(input("Height of wall: "))
 test_w = int(input("Width of wall: "))
 coverage = 5
 paint_calc(height=test_h, width=test_w, cover=coverage)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def prime_checker(number):
+    is_prime = True
+    for i in range(2, number):
+        if number % i == 0:
+            is_prime = False
+    if is_prime:
+        print("It's a prime number.")
+    else:
+        print("It's not a prime number.")
+
+#Write your code above this line 👆
+    
+#Do NOT change any of the code below👇
+n = int(input("Check this number: "))
+prime_checker(number=n)
+
+
