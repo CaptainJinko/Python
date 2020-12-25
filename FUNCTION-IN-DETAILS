@@ -1,47 +1,60 @@
-#Functions with output
-def format_name(f_name, l_name):
-  
-  formated_f_name=f_name.title()
-  formated_l_name=l_name.title()
+A function is a set of statements that take inputs, do some specific computation and produces output. The idea is to put some commonly
+or repeatedly done task together and make a function, so that instead of writing the same code again and again for different inputs, we can call the function.
+Python provides built-in functions like print(), etc. but we can also create your own functions. These functions are called user-defined functions.
 
-  print(f"{formated_f_name}  {formated_l_name}")
+# A simple Python function to check 
+# whether x is even or odd 
+def evenOdd( x ): 
+   if (x % 2 == 0): 
+    print "even"
+    else: 
+   print "odd"
 
-format_name("elias","jinko")
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#instead of printing we can retyrn it as well
-#Functions with output
-def format_name(f_name, l_name):
-  
-  formated_f_name=f_name.title()
-  formated_l_name=l_name.title()
+# Driver code 
+evenOdd(2) 
+evenOdd(3) 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Pass by Reference or pass by value?
+# Here x is a new reference to same list lst 
+def myFun(x): 
+x[0] = 20
 
-  return f"{formated_f_name}  {formated_l_name}"
-  
-format_string=format_name("Elias" , "jinko")
-print(format_string)
-   
--------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
-#printing format staright from the print function works as well
+# Driver Code (Note that lst is modified 
+# after function call. 
+lst = [10, 11, 12, 13, 14, 15] 
+myFun(lst); 
+print(lst) 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def myFun(x): 
 
-def format_name(f_name, l_name):
-  
-  formated_f_name=f_name.title()
-  formated_l_name=l_name.title()
+# After below line link of x with previous 
+# object gets broken. A new object is assigned 
+# to x. 
+x = [20, 30, 40] 
 
-  return f"{formated_f_name}  {formated_l_name}"
+# Driver Code (Note that lst is not modified 
+# after function call. 
+lst = [10, 11, 12, 13, 14, 15] 
+myFun(lst); 
+print(lst) 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def myFun(x): 
 
-print(format_name("Elias" , "jinko"))   
-   
+# After below line link of x with previous 
+# object gets broken. A new object is assigned 
+# to x. 
+x = 20
 
-----------------------
+# Driver Code (Note that lst is not modified 
+# after function call. 
 x = 10
 myFun(x); 
 print(x) 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def swap(x, y): 
-	temp = x; 
-	x = y; 
-	y = temp; 
+    temp = x; 
+    x = y; 
+    y = temp; 
 
 # Driver code 
 x = 2
@@ -94,13 +107,41 @@ is used to define the normal functions and the lambda keyword is used to create 
 	
 cube = lambda x: x*x*x 
 print(cube(7)) 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+################################################################################################################################################################################
+#Functions with output
+def format_name(f_name, l_name):
+  
+  formated_f_name=f_name.title()
+  formated_l_name=l_name.title()
 
+  print(f"{formated_f_name}  {formated_l_name}")
 
+format_name("elias","jinko")
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#instead of printing we can return it as well
+#Functions with output
+def format_name(f_name, l_name):
+  
+  formated_f_name=f_name.title()
+  formated_l_name=l_name.title()
 
+  return f"{formated_f_name}  {formated_l_name}"
+  
+format_string=format_name("Elias" , "jinko")
+print(format_string)
+   
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+#printing format staright from the print function works as well
 
+def format_name(f_name, l_name):
+  
+  formated_f_name=f_name.title()
+  formated_l_name=l_name.title()
 
+  return f"{formated_f_name}  {formated_l_name}"
 
+print(format_name("Elias" , "jinko"))   
+   
 
-
+ 
