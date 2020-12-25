@@ -1,3 +1,39 @@
+#Functions with output
+def format_name(f_name, l_name):
+  
+  formated_f_name=f_name.title()
+  formated_l_name=l_name.title()
+
+  print(f"{formated_f_name}  {formated_l_name}")
+
+format_name("elias","jinko")
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#instead of printing we can retyrn it as well
+#Functions with output
+def format_name(f_name, l_name):
+  
+  formated_f_name=f_name.title()
+  formated_l_name=l_name.title()
+
+  return f"{formated_f_name}  {formated_l_name}"
+  
+format_string=format_name("Elias" , "jinko")
+print(format_string)
+   
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+#printing format staright from the print function works as well
+
+def format_name(f_name, l_name):
+  
+  formated_f_name=f_name.title()
+  formated_l_name=l_name.title()
+
+  return f"{formated_f_name}  {formated_l_name}"
+
+print(format_name("Elias" , "jinko"))   
+   
+
+----------------------
 x = 10
 myFun(x); 
 print(x) 
