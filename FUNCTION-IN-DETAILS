@@ -1,0 +1,70 @@
+x = 10
+myFun(x); 
+print(x) 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def swap(x, y): 
+	temp = x; 
+	x = y; 
+	y = temp; 
+
+# Driver code 
+x = 2
+y = 3
+swap(x, y) 
+print(x) 
+print(y) 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Default arguments:
+A default argument is a parameter that assumes a default value if a value is not provided in the function call for that argument.
+The following example illustrates Default arguments.
+# Python program to demonstrate 
+# default arguments 
+def myFun(x, y=50): 
+	print("x: ", x) 
+	print("y: ", y) 
+
+# Driver code (We call myFun() with only 
+# argument) 
+myFun(10) 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Keyword arguments:
+The idea is to allow caller to specify argument name with values so that caller does not need to remember order of parameters.
+# Python program to demonstrate Keyword Arguments 
+def student(firstname, lastname): 
+	print(firstname, lastname) 
+	
+	
+# Keyword arguments				 
+student(firstname ='Geeks', lastname ='Practice')	 
+student(lastname ='Jinko', firstname ='Elias') 
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+We can have both normal and keyword variable number of arguments. Please see this for details.
+# Python program to illustrate 
+# *args for variable number of arguments 
+def myFun(*argv): 
+	for arg in argv: 
+		print (arg) 
+	
+myFun('Hello', 'Welcome', 'to', 'GeeksforGeeks') 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Anonymous functions: In Python, anonymous function means that a function is without a name. As we already know that def keyword 
+is used to define the normal functions and the lambda keyword is used to create anonymous functions.
+
+# Python code to illustrate cube of a number 
+# using labmda function 
+	
+cube = lambda x: x*x*x 
+print(cube(7)) 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
