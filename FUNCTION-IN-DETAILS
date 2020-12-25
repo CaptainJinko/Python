@@ -89,8 +89,8 @@ student(lastname ='Jinko', firstname ='Elias')
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-We can have both normal and keyword variable number of arguments. Please see this for details. 
-https://www.geeksforgeeks.org/args-kwargs-python/
+We can have both normal and keyword variable number of arguments. Please see this for details https://www.geeksforgeeks.org/args-kwargs-python/
+
 # Python program to illustrate 
 # *args for variable number of arguments 
 def myFun(*argv): 
