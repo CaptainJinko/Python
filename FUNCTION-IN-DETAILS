@@ -17,7 +17,7 @@ evenOdd(3)
 Pass by Reference or pass by value?
 # Here x is a new reference to same list lst 
 def myFun(x): 
-x[0] = 20
+   x[0] = 20
 
 # Driver Code (Note that lst is modified 
 # after function call. 
@@ -43,13 +43,14 @@ def myFun(x):
 # After below line link of x with previous 
 # object gets broken. A new object is assigned 
 # to x. 
-x = 20
+  x = 20
 
 # Driver Code (Note that lst is not modified 
 # after function call. 
 x = 10
 myFun(x); 
-print(x) 
+print(x)  
+           Output:10
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def swap(x, y): 
     temp = x; 
@@ -63,11 +64,10 @@ swap(x, y)
 print(x) 
 print(y) 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Default arguments:
-A default argument is a parameter that assumes a default value if a value is not provided in the function call for that argument.
-The following example illustrates Default arguments.
-# Python program to demonstrate 
-# default arguments 
+#Default arguments:
+#A default argument is a parameter that assumes a default value if a value is not provided in the function call for that argument.
+#The following example illustrates Default arguments. Python program to demonstrate  default arguments 
+
 def myFun(x, y=50): 
 	print("x: ", x) 
 	print("y: ", y) 
@@ -89,7 +89,7 @@ student(lastname ='Jinko', firstname ='Elias')
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-We can have both normal and keyword variable number of arguments. Please see this for details.
+We can have both normal and keyword variable number of arguments. Please see this for details. https://www.geeksforgeeks.org/args-kwargs-python/
 # Python program to illustrate 
 # *args for variable number of arguments 
 def myFun(*argv): 
