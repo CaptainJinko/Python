@@ -1,9 +1,11 @@
 A function is a set of statements that take inputs, do some specific computation and produces output. The idea is to put some commonly
 or repeatedly done task together and make a function, so that instead of writing the same code again and again for different inputs, we can call the function.
-Python provides built-in functions like print(), etc. but we can also create your own functions. These functions are called user-defined functions.
+Python provides built-in functions like print(), etc. but we can also create your own functions. 
+
 
 # A simple Python function to check 
-# whether x is even or odd 
+# whether x is even or odd        
+""" These functions are called user-defined functions."""  #This is Docstring it can be seen as higligted or pop up info as well
 def evenOdd( x ): 
    if (x % 2 == 0): 
     print "even"
@@ -131,7 +133,81 @@ def format_name(f_name, l_name):
   
 format_string=format_name("Elias" , "jinko")
 print(format_string)
-   
+##############################################################################################################################################################################
+# Python program to illustrate 
+# *args with first extra argument 
+def myFun(arg1, *argv): 
+	print ("First argument :", arg1) 
+	for arg in argv: 
+		print("Next argument through *argv :", arg) 
+
+myFun('Hello', 'Welcome', 'to', 'GeeksforGeeks') 
+--------------------------------------------------------
+The syntax is to use the symbol * to take in a variable number of arguments; by convention, it is often used with the word args.
+What *args allows you to do is take in more arguments than the number of formal arguments that you previously defined. With *args,
+any number of extra arguments can be tacked on to your current formal parameters (including zero extra arguments).
+For example : we want to make a multiply function that takes any number of arguments and able to multiply them all together.
+It can be done using *args.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Python program to illustrate 
+# *args for variable number of arguments 
+def myFun(*argv): 
+	for arg in argv: 
+		print (arg) 
+	
+myFun('Hello', 'Welcome', 'to', 'GeeksforGeeks')
+--------------------------------------------------------------
+# Python program to illustrate 
+# *args with first extra argument 
+def myFun(arg1, *argv): 
+	print ("First argument :", arg1) 
+	for arg in argv: 
+		print("Next argument through *argv :", arg) 
+
+myFun('Hello', 'Welcome', 'to', 'GeeksforGeeks') 
+-------------------------------------------------------------------------
+# Python program to illustrate 
+# *kargs for variable number of keyword arguments 
+
+def myFun(**kwargs): 
+	for key, value in kwargs.items(): 
+		print ("%s == %s" %(key, value)) 
+
+# Driver code 
+myFun(first ='Geeks', mid ='for', last='Geeks')	 
+-----------------------------------------------------------------------------
+# Python program to illustrate **kargs for 
+# variable number of keyword arguments with 
+# one extra argument. 
+
+def myFun(arg1, **kwargs): 
+	for key, value in kwargs.items(): 
+		print ("%s == %s" %(key, value)) 
+
+# Driver code 
+myFun("Hi", first ='Geeks', mid ='for', last='Geeks')	 
+-----------------------------------------------------------------------------------
+def myFun(arg1, arg2, arg3): 
+	print("arg1:", arg1) 
+	print("arg2:", arg2) 
+	print("arg3:", arg3) 
+	
+# Now we can use *args or **kwargs to 
+# pass arguments to this function : 
+args = ("Geeks", "for", "Geeks") 
+myFun(*args) 
+
+kwargs = {"arg1" : "Geeks", "arg2" : "for", "arg3" : "Geeks"} 
+myFun(**kwargs) 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def myFun(*args,**kwargs): 
+	print("args: ", args) 
+	print("kwargs: ", kwargs) 
+
+
+# Now we can use both *args ,**kwargs 
+# to pass arguments to this function : 
+myFun('geeks','for','geeks',first="Geeks",mid="for",last="Geeks") 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 #printing format staright from the print function works as well
 
@@ -142,9 +218,8 @@ def format_name(f_name, l_name):
 
   return f"{formated_f_name}  {formated_l_name}"
 
-print(format_name("Elias" , "jinko"))   
-   
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+print(format_name("Elias" , "jinko"))    
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Challenge
 
 def is_leap(year):
@@ -167,12 +242,10 @@ def days_in_month(year, month):
     return 29
   return month_days[month - 1]
 
-
-
 #Do NOT change any of the code below 👇
 year = int(input("Enter a year: "))
 month = int(input("Enter a month: "))
 days = days_in_month(year, month)
 print(days)
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
