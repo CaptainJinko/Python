@@ -20,7 +20,6 @@ operations={
   "/": divide
 }
 
- 
 num1=int(input("What is first number:? "))
 num2=int(input("What is the second number:? "))
 
