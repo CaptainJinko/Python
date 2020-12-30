@@ -28,6 +28,7 @@
 #Hint 4: Create a deal_card() function that uses the List below to *return* a random card.
 #11 is the Ace.
 #################################################################################################################################################################################
+#The fist to testthe code before contnuing 
 import random
 
 #Hint 4: Create a deal_card() function that uses the List below to *return* a random card.
