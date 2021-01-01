@@ -1,0 +1,55 @@
+The linke below is for the ASCII text, which you can any text and copy to use it as your logo
+
+# http://patorjk.com/software/taag/#p=testall&h=3&v=1&f=Avatar&t=GuessEliasNumber
+
+from art import logo
+from random import randint 
+
+EASY_LEVEL=10
+HARD_LEVEL=5
+#Function to check user's guess against actual asnwer
+def checkingAnswer(guess, answer, turns):
+  if guess > answer:
+    print("Too High")
+    return  turns -1
+  elif guess <answer:
+    print("Too Low")
+    return turns -1
+  else:
+    print(f" You have got it: The Answer is {answer}")
+
+#Make  function to set difficulty
+def set_Difficulty():
+  level=input("Choose type 'easy' or ' hard' ")
+  if level=="easy":
+    return EASY_LEVEL
+  else:
+    return HARD_LEVEL
+
+def game():
+  print(logo)
+  #Choose a random number bewteen 1 to 100
+  print("Welocome to the number choosing game!")
+  print("I'm thinking of a number between 1 to 100.")
+  answer=randint(1, 100)
+  print(f" Psst, the corect number is {answer}")
+  #Repeat the guessing functionality if they guess it wrong
+  turns=set_Difficulty()
+  guess=0
+
+  while guess!=answer:
+    print(f" You have {turns} attemps remaining to guess the number.")
+
+    guess=int(input("Make a guess "))
+
+    #Track the number of guess and reduce it by 1 if they guess it wrong
+    turns=checkingAnswer(guess, answer, turns)
+    if turns==0:
+      print(" You run out of guess. you lose ")
+      return
+    elif guess!=answer:
+      print("Gues again")  
+
+game( )
+
+  
