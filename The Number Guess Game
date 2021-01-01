@@ -1,5 +1,4 @@
 The linke below is for the ASCII text, which you can any text and copy to use it as your logo
-
 # http://patorjk.com/software/taag/#p=testall&h=3&v=1&f=Avatar&t=GuessEliasNumber
 
 from art import logo
@@ -52,4 +51,74 @@ def game():
 
 game( )
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#The link below is ASCII Text for logos in your project 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#step by step way
+
+from random import randint
+def checkAnswer(guess, answer):
+  if guess>answer:
+    print("Too High fire 🔥")
+  if guess < answer:
+    print("Too Low  😎")
+  else:
+    print(f" You have got it. The answer Bingos!! {answer} ") 
+
+-------------------------------------------------
+def game():
+
+#Choosing a random nuymber between 1 and 100
+print("Welcome to the Number Guessing Game!")
+print("I'm thinking of a number between 1 and 100 💯")
+answer=randint(1, 100)
+
+
+#Make function to set difficulty
+#Let user guess a number.
+guess=int(input("Make a guess "))
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Set Global variables at the top of the programme
+EASY_LEVEL=5
+HARD_LEVEL=10
+
+#Make function to set difficulty
+def set_difficulty():
+  level=input("Choose a difficulty.Type 'esay' or 'hard': ")
+  if level=="easy":
+    return EASY_level
+  else:
+    return HARD_LEVEL
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#STEP BY STEP WAY
+
+ def set_difficulty():
+    level=input("Choose a difficulty.Type 'esay' or 'hard: ")
+    if level=="easy":
+      return EASY_LEVEL
+    else:
+      return HARD_LEVEL  
+
+  turns=set_difficulty()
   
+  guess=0
+  while guess!=answer:
+    print(f" You have {turns} attemps remaining to guess the number.")
+    #Let user guess a number.
+    guess=int(input("Make a guess "))
+
+    turns=checkAnswer(guess, answer, turns)
+    if turns==0:
+      print("You have run out of  guess. You lose.")
+      return 
+#Function to check user's guess against actual number 
+#Repeat the gussing functinality if thet guess it wrong
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+elif guess !=answer:
+      print("Guess again.")  
+    
+game()
+ 
