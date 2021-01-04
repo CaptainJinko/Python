@@ -1,4 +1,15 @@
-
+#Display art 
+#Generate a random account for the game data
+#Format the accont data into printable format
+#Ask  user for a guess
+# Check if user is correct 
+# Get follower account of each account
+#Use if statement to check if user is correct
+#Give user a feedback on thgeir guess
+#score keeping
+#make the game rpeatable 
+#Making accout at position B becomes the next account at position A
+################################################################################################################################################################################
 import random
 from game_data import data
 def get_random_account():
