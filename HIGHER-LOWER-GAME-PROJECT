@@ -4,7 +4,7 @@ from game_data import data
 def get_random_account():
   """Get data from random account"""
   return random.choice(data)
---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def format_data(account):
   """Format account into printable format: name, description and country"""
   name=account["name"]
@@ -71,7 +71,7 @@ def format_data(account):
   account_descr=account["description"]
   account_country=account["country"]
   return f"{account_name}, a {account_descr}, from {account_country}"
----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Display art
 print(logo)
 #Generate assert random accout from the game data
