@@ -1,0 +1,79 @@
+# import another_module
+# print(another_module.another_variable)
+# #-------------------------------------
+# import turtle
+# timmy = turtle.Turtle()
+# --------------
+# from turtle import Turtle
+# elias = Turtle()
+
+from turtle import Turtle, Screen
+
+my_screen = Screen()
+print(my_screen.canvheight)
+---------------------------------------------------
+from turtle import Turtle, Screen
+timmy = Turtle()
+print(timmy)
+
+my_screen = Screen()
+print(my_screen.canvheight)
+my_screen.exitonclick()
+
+-----------------------------------------------------------
+#when we call the function shape, "turtle" will actual print the image turtle
+from turtle import Turtle, Screen
+timmy = Turtle()
+print(timmy)
+timmy.shape("turtle")
+
+
+my_screen = Screen()
+print(my_screen.canvheight)
+my_screen.exitonclick()
+---------------------------------------------
+rom turtle import Turtle, Screen
+timmy = Turtle()
+
+timmy.shape("turtle")
+timmy.color("red")
+timmy.forward(100)
+print(timmy)
+
+my_screen = Screen()
+print(my_screen.canvheight)
+my_screen.exitonclick()
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#creating an object from the package installed "prettytable"
+
+from prettytable import PrettyTable
+table = PrettyTable()
+print(table)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+from prettytable import PrettyTable
+
+table = PrettyTable()
+table.add_column("Pokemon Name", ["Pikachu", "Squirtle", "Charmander"])
+table.add_column("Type",["Electric", "Water", "Fire"])
+table.align = "l"
+
+print(table)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+from prettytable import PrettyTable
+
+my_table = PrettyTable()
+my_table.add_column("Adelaide", [1295, 1158259, 600.5])
+my_table.add_column("Brisbane", [5905, 1857594, 114604])
+my_table.add_column("Darwin", [112, 120900, 1714.7])
+my_table.add_column("Hobart", [1357, 205556, 619.5])
+my_table.add_column("Sydney", [2058, 4336374, 1214.8])
+my_table.add_column("Melbourne", [1566, 111222333, 12345])
+my_table.add_column("Perth", [5386, 1554769, 869.4])
+my_table.add_column("Schiedam", [150.000, 12.589, 45000])
+
+print(my_table)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
