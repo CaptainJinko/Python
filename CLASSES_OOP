@@ -12,6 +12,7 @@ Some points on Python class:
 Classes are created by keyword class.
 Attributes are the variables that belong to a class.
 Attributes are always public and can be accessed using the dot (.) operator. Eg.: Myclass.Myattribute
+https://www.geeksforgeeks.org/python-classes-and-objects/?ref=lbp
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 class ClassName:
     # Statement-1
