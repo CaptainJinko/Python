@@ -74,6 +74,11 @@ p = Person('Nikhil')
 p.say_hi() 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Class and Instance Variables
+Instance variables are for data unique to each instance and class variables are for attributes and methods shared by all instances of the class. Instance variables are 
+variables whose value is assigned inside a constructor or method with self whereas class variables are variables whose value is assigned in the class.
+Defining instance variable using a constructor. 
+Class and Instance Variables
+
 # Python3 program to show that the variables with a value 
 # assigned in the class declaration, are class variables and 
 # variables inside methods and constructors are instance 
