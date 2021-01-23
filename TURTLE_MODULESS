@@ -122,6 +122,15 @@ screen = Screen()
 screen.exitonclick()
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#drawing the shapes without function, which can only be drawn static with one shape at a time based on the value of mun_sides value
+num_sides = 10
+for _ in range(num_sides):
+    angle = 360/num_sides
+    tim.forward(100)
+    tim.pensize(10)
+    tim.color("green")
+    tim.right(angle)
+---------------------------------
 #Usinga function to draw
 
 from turtle import Turtle
