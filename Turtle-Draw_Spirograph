@@ -1,0 +1,24 @@
+#Tytutle challenge draw Spirograph
+import turtle as t
+
+import random
+
+tim = t.Turtle()
+screen = t.Screen()
+t.colormode(255)
+
+
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    generate_random_colour = (r, g, b)
+    return generate_random_colour
+
+
+tim.circle(100)
+tim.color(random_color())
+tim.speed("fastest")
+
+screen.exitonclick()
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
