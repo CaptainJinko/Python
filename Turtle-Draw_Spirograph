@@ -106,4 +106,3 @@ draw_spirograph(5)
 screen = t.Screen()
 screen.exitonclick()
 
-
