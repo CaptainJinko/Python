@@ -105,4 +105,14 @@ def draw_spirograph(size_of_gap):
 draw_spirograph(5)
 screen = t.Screen()
 screen.exitonclick()
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#How to extract a package. 
+preference 
+select the project
+project interpreter
+Click on the + sign 
+Search for the package name Eg colorgram
 
+now in the main.py file you can import the package 
+import colorgram 
+ 
