@@ -107,12 +107,44 @@ screen = t.Screen()
 screen.exitonclick()
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #How to extract a package. 
-preference 
-select the project
-project interpreter
-Click on the + sign 
-Search for the package name Eg colorgram
+How to use
+Using colorgram.py is simple. Mainly there’s only one function you’ll need to use - colorgram.extract.
+colorgram.extract(image, number_of_colors)
+Extract colors from an image. image may be either a path to a file, a file-like object, or a Pillow Image object. 
+The function will return a list of number_of_colors Color objects.
+---------------------------------
+import colorgram
 
-now in the main.py file you can import the package 
-import colorgram 
- 
+colors = colorgram.extract('image.jpg', 30)  # it has to be on the same indentation level with image file
+rgb_colors = []
+for color in colors:
+    rgb_colors.append(color.rgb)
+    r = color.rgb.r
+    g = color.rgb.g
+    b = color.rgb.b
+    new_color = (r, g, b)
+    rgb_colors.append(new_color)
+print(rgb_colors)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#How to extract colors 
+# import colorgram
+#
+# colors = colorgram.extract('image.jpg', 30)  # it has to be on the same indentation level with image file
+# rgb_colors = []
+# for color in colors:
+#     rgb_colors.append(color.rgb)
+#     r = color.rgb.r
+#     g = color.rgb.g
+#     b = color.rgb.b
+#     new_color = (r, g, b)
+#     rgb_colors.append(new_color)
+#
+# print(rgb_colors)
+
+color_list = [(199, 175, 117), (124, 36, 24), (168, 106, 57), (186, 158, 53), (6, 57, 83), (109, 67, 85),
+              (113, 161, 175), (64, 153, 138), (39, 36, 36), (76, 40, 48), (9, 67, 47), (90, 141, 53), (181, 96, 79),
+              (132, 40, 42), (141, 171, 155), (179, 201, 186), (172, 153, 159), (212, 183, 177), (176, 198, 203),
+              (150, 115, 120), (202, 185, 190), (40, 72, 82), (46, 73, 62), (47, 66, 82)]
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
