@@ -1,1 +1,98 @@
-;lfsml;gmfsllr
+#Event listeners, when we use function as an argument into another fuction, we dont use the parenthesis. Eg move_forrads into onkey() 
+from turtle import Turtle, Screen
+
+tim = Turtle()
+screen = Screen()
+
+
+def move_forwards():
+    tim.forward(10)
+
+
+screen.listen()
+screen.onkey(key="space", fun=move_forwards)
+screen.exitonclick()
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#W=fordards
+#S=Backwards
+#A=Counter clockwise
+#D=Clockwise
+#=C to clear the screen
+
+from turtle import Turtle, Screen
+
+tim = Turtle()
+screen = Screen()
+
+
+def move_forwards():
+    tim.forward(10)
+
+
+def back_wards():
+    tim.forward(-10)
+
+
+def counter_clockwise():
+    tim.right(90)
+    tim.left(90)
+    tim.circle(100)
+
+
+def clock_wise():
+    tim.right(-90)
+    tim.left(-90)
+    tim.circle(-100)
+
+
+def clear_screen():
+    tim.clear()
+
+
+screen.listen()
+screen.onkey(key="w", fun=move_forwards)
+screen.onkey(key="s", fun=back_wards)
+screen.onkey(key="a", fun=counter_clockwise)
+screen.onkey(key="d", fun=clock_wise)
+screen.onkey(key="c", fun=clear_screen)
+screen.exitonclick()
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Little bit cool but the avove code is better 
+from turtle import Turtle, Screen
+
+tim = Turtle()
+screen = Screen()
+
+
+def move_forwards():
+    tim.forward(10)
+
+
+def move_backwards():
+    tim.backward(10)
+
+
+def turn_left():
+    new_heading = tim.heading() + 10
+    tim.setheading(new_heading)
+
+
+def turn_right():
+    new_heading = tim.heading() - 10
+    tim.setheading(new_heading)
+
+
+def clear_screen():
+    tim.clear()
+
+
+screen.listen()
+screen.onkey(key="w", fun=move_forwards)
+screen.onkey(key="s", fun=move_backwards)
+screen.onkey(key="a", fun=turn_left)
+screen.onkey(key="d", fun=turn_right)
+screen.onkey(key="c", fun=clear_screen)
+screen.exitonclick()
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Object and state instances
