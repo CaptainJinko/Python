@@ -1,0 +1,153 @@
+How to search for python solution: type your quiries in googgle and then at the end type stack overflow. you will get exact answer .  
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Setting up the screen for the snake game 
+from turtle import Screen, Turtle
+
+screen = Screen()
+screen.setup(width=600, height=600)
+
+screen.bgcolor("black")
+screen.title("My Snake Game")
+
+
+screen.exitonclick()
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+from turtle import Screen, Turtle
+
+x_positions = [(0, 0), (-20, 0), (-40, 0), (-60, 0)]
+screen = Screen()
+screen.setup(width=600, height=600)
+screen.bgcolor("black")
+screen.title("My Snake Game")
+
+segment1 = Turtle("square")
+segment1.color("white")
+
+segment2 = Turtle("square")
+segment2.color("white")
+segment2.goto(-20, 0)
+
+segment3 = Turtle("square")
+segment3.color("white")
+segment3.goto(-40, 0)
+
+
+screen.exitonclick()
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+from turtle import Screen, Turtle
+
+x_positions = [(0, 0), (-20, 0), (-40, 0), (-60, 0)]
+screen = Screen()
+screen.setup(width=600, height=600)
+screen.bgcolor("black")
+screen.title("My Snake Game")
+
+for snake_line in range(0, 3):
+    snake = Turtle("square")
+    snake.color("white")
+    snake.goto(x=x_positions[snake_line])
+
+screen.exitonclick()
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Best approach
+
+from turtle import Screen, Turtle
+
+screen = Screen()
+screen.setup(width=600, height=600)
+screen.bgcolor("black")
+screen.title("My Snake Game")
+
+starting_positions = [(0, 0), (-20, 0), (-40, 0)]
+
+for position in starting_positions:
+    new_segment = Turtle("square")
+    new_segment.color("white")
+    new_segment.goto(position)
+
+
+
+screen.exitonclick()
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Create a segment as empty list [] and append it to the new_segment
+
+starting_positions = [(0, 0), (-20, 0), (-40, 0)]
+segments = []
+for position in starting_positions:
+    new_segment = Turtle("square")
+    new_segment.color("white")
+    new_segment.goto(position)
+    segments.append(new_segment)
+
+
+screen.exitonclick()
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#if we want somenthing to continue in our program, the way to do it is using a  while loop
+
+starting_positions = [(0, 0), (-20, 0), (-40, 0)]
+segments = []
+for position in starting_positions:
+    new_segment = Turtle("square")
+    new_segment.color("white")
+    new_segment.penup()
+    new_segment.goto(position)
+    segments.append(new_segment)
+game_is_on = True
+while game_is_on:
+    for seg in segments:
+        seg.forward(20)
+
+screen.exitonclick()
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tracer and update methods to : read about them inthe documentation
+
+screen.tracer(0)
+
+starting_positions = [(0, 0), (-20, 0), (-40, 0)]
+segments = []
+for position in starting_positions:
+    new_segment = Turtle("square")
+    new_segment.color("white")
+    new_segment.penup()
+    new_segment.goto(position)
+    segments.append(new_segment)
+
+screen.update()
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#To get our snake moving and later get the whole to be turning at onedirection we need the start from the code below 
+from turtle import Screen, Turtle
+import time
+
+screen = Screen()
+screen.setup(width=600, height=600)
+screen.bgcolor("black")
+screen.title("My Snake Game")
+
+screen.tracer(0)
+
+starting_positions = [(0, 0), (-20, 0), (-40, 0)]
+segments = []
+for position in starting_positions:
+    new_segment = Turtle("square")
+    new_segment.color("white")
+    new_segment.penup()
+    new_segment.goto(position)
+    segments.append(new_segment)
+
+game_is_on = True
+while game_is_on:
+    screen.update()
+    time.sleep(0.1)
+
+    for seg_num in range(len(segments) - 1, 0, -1):
+        new_x = segments[seg_num - 1].xcor()
+        new_y = segments[seg_num - 1].ycor()
+        segments[seg_num].goto(new_x, new_y)
+
+    segments[0].forward(20)
+     
+screen.exitonclick()
