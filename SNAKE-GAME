@@ -103,22 +103,8 @@ while game_is_on:
 
 screen.exitonclick()
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-tracer and update methods to : read about them inthe documentation
-
-screen.tracer(0)
-
-starting_positions = [(0, 0), (-20, 0), (-40, 0)]
-segments = []
-for position in starting_positions:
-    new_segment = Turtle("square")
-    new_segment.color("white")
-    new_segment.penup()
-    new_segment.goto(position)
-    segments.append(new_segment)
-
-screen.update()
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#To get our snake moving and later get the whole to be turning at onedirection we need the start from the code below 
+ 
+#To get our snake moving and later get the whole to be turning at onedirection we need the start from the code below, take note of the following: tarcer, update, sleep
 from turtle import Screen, Turtle
 import time
 
