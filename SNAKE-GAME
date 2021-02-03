@@ -161,6 +161,33 @@ while is_game_on:
     snake.move()
 screen.exitonclick()
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#main.py2
+#continution of main.py file by listeners of the key to bind the key to the movement 
+
+screen = Screen()
+Screen().setup(width=600, height=600)
+Screen().title("My Snake Game")
+Screen().bgcolor("black")
+screen.tracer(0)
+
+snake = Snake()
+
+screen.listen()
+screen.onkey(snake.up, "Up")
+screen.onkey(snake.down, "Down")
+screen.onkey(snake.left, "Left")
+screen.onkey(snake.right, "Right")
+
+is_game_on = True
+while is_game_on:
+    screen.update()
+    time.sleep(0.1)
+
+    snake.move()
+screen.exitonclick()
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Snake1
 #snake.py
 #Create a snake class and move to OOP
 
@@ -192,7 +219,21 @@ class Snake:
             self.segments[seg_num].goto(new_x, new_y)
         self.segments[0].forward(MOVE_DISTANCE)
         
-        
+ -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#snake.py
+#Snake2 continuesio of snake file , creating ,methods in snake to fetermines the direction of of movement by 
+ def up(self):
+        self.segments[0].setheading(90)
+
+    def down(self):
+        self.segments[0].setheading(270)
+
+    def left(self):
+        self.segments[0].setheading(180)
+
+    def right(self):
+        self.segments[0].setheading(0)
+
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 
