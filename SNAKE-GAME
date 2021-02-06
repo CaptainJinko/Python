@@ -309,6 +309,8 @@ class Snake:
     def right(self):
         if self.head.heading() != LEFT:
             self.head.setheading(0)
+            
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------           
 from turtle import Turtle, Screen
 
 MOVE_DISTANCE = 20
