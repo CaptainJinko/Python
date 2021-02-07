@@ -1,0 +1,145 @@
+class Animal:
+    def __init__(self):
+        self.num_eyes = 2
+
+    def breathe(self):
+        print("Inhale, Exhale.")
+
+
+class Fish:
+
+    def swim(self):
+        print("moving in watter .")
+
+
+nemo = Fish()
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+class Animal:
+    def __init__(self):
+        self.num_eyes = 2
+
+    def breathe(self):
+        print("Inhale, Exhale.")
+
+
+class Fish(Animal):
+
+    def __init__(self):
+        super().__init__()
+
+    def swim(self):
+        print("moving in watter .")
+
+
+nemo = Fish()
+nemo.swim()
+nemo.breathe()
+print(nemo.num_eyes)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+class Animal:
+    def __init__(self):
+        self.num_eyes = 2
+
+    def breathe(self):
+        print("Inhale, Exhale.")
+
+
+class Fish(Animal):
+
+    def __init__(self):
+        super().__init__()
+
+    def breathe(self):
+        super().breathe()
+        print("doing this under water")
+
+    def swim(self):
+        print("moving in watter .")
+
+
+nemo = Fish()
+nemo.swim()
+nemo.breathe()
+print(nemo.num_eyes)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Python Inheritance
+#Inheritance allows us to define a class that inherits all the methods and properties from another class.
+#Parent class is the class being inherited from, also called base class.
+#Child class is the class that inherits from another class, also called derived class.
+
+#Create a Parent Class
+#Example
+#Create a class named Person, with firstname and lastname properties, and a printname method:
+
+class Person:
+    def __init__(self, fname, lname):
+        self.fname = fname
+        self.lname = lname
+
+    def print_name(self):
+        print(self.fname, self.lname)
+
+
+my_name = Person("Elias Adam ", "Jinko")
+my_name.print_name()
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+#Now the Student class has the same properties and methods as the Person class.
+
+class Person:
+    def __init__(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+
+    def print_name(self):
+        print(self.first_name, self.last_name)
+
+
+# Use the Person class to create an object, and then execute the printname method:
+my_name = Person("Elias", "Jinko")
+my_name.print_name()
+
+print("****")
+
+class Student(Person):
+    pass
+
+
+my_student_name = Student("ZamQras", "Jinko")
+my_student_name.print_name()
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+#We want to add the __init__() function to the child class (instead of the pass keyword).
+#Note: The __init__() function is called automatically every time the class is being used to create a new object.
+
+When you add the __init__() function, the child class will no longer inherit the parent's __init__() function.
+Note: The child's __init__() function overrides the inheritance of the parent's __init__() function.
+To keep the inheritance of the parent's __init__() function, add a call to the parent's __init__() function:
+Example
+
+class Person:
+    def __init__(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+
+    def print_name(self):
+        print(self.first_name, self.last_name)
+
+
+# Use the Person class to create an object, and then execute the printname method:
+my_name = Person("Elias", "Jinko")
+my_name.print_name()
+
+print("****")
+
+
+class Student(Person):
+    def __init__(self, fname, lastname):
+        Person.__init__(self, fname, lastname)
+
+
+my_student_name = Student("ZamQras", "Jinko")
+my_student_name.print_name()
+
