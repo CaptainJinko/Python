@@ -1,18 +1,28 @@
 class Animal:
     def __init__(self):
-        self.num_eyes = 2
+        self.number_of_eyes = 2
 
     def breathe(self):
-        print("Inhale, Exhale.")
+        print("Inhale , Exhale")
 
 
-class Fish:
+my_animal = Animal()
+my_animal.breathe()
+print(my_animal.number_of_eyes)
 
+print("*************")
+
+
+class Fish(Animal):
     def swim(self):
-        print("moving in watter .")
+        print("moving in water")
 
 
-nemo = Fish()
+my_fish = Fish()
+my_fish.breathe()
+my_fish.swim()
+print(my_fish.number_of_eyes)
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 class Animal:
