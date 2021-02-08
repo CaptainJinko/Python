@@ -72,6 +72,41 @@ nemo = Fish()
 nemo.swim()
 nemo.breathe()
 print(nemo.num_eyes)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+class Animal:
+    def __init__(self):
+        self.eyes = 2
+
+    def breathe(self):
+        print("Inhale and exhale")
+
+    def fishermen(self):
+        print("We have fish farmers all over")
+
+
+class Fish(Animal):
+    def __init__(self):
+        super(Fish, self).__init__()
+
+    def breathe(self):
+        super(Fish, self).breathe()
+        print("Doing this under water ")
+
+    def fishermen(self):
+        super(Fish, self).fishermen()
+        print("We  fish here as a hobby not business")
+
+    def swim(self):
+        print("moving in water")
+
+
+memo = Fish()
+memo.breathe()
+memo.swim()
+memo.fishermen()
+print(memo.eyes)
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Python Inheritance
 #Inheritance allows us to define a class that inherits all the methods and properties from another class.
