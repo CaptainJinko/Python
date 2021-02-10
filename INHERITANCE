@@ -188,3 +188,129 @@ class Student(Person):
 my_student_name = Student("ZamQras", "Jinko")
 my_student_name.print_name()
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#main.py
+from turtle import Screen
+from snake import Snake
+from food import Food
+from scoreboard import Scoreboard
+import time
+
+Screen().setup(width=600, height=600)
+Screen().title("My Snake Game")
+Screen().bgcolor("black")
+Screen().tracer(0)
+
+screen = Screen()
+snake = Snake()
+scoreboard = Scoreboard()
+food = Food()
+Screen().listen()
+
+screen.onkey(snake.up, "Up")
+screen.onkey(snake.down, "Down")
+screen.onkey(snake.left, "Left")
+screen.onkey(snake.right, "Right")
+
+is_game_on = True
+while is_game_on:
+    screen.update()
+    time.sleep(0.1)
+    snake.move()
+
+    if snake.head.distance(food) < 15:
+        food.refresh()
+        scoreboard.increase_score()
+screen.exitonclick()
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#snake.py
+
+from turtle import Turtle, Screen
+
+STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
+MOVE_DISTANCE = 20
+UP = 90
+DOWN = 270
+LEFT = 180
+RIGHT = 0
+
+
+class Snake:
+    def __init__(self):
+        self.segments = []
+        self.create_snake()
+        self.head = self.segments[0]
+
+    def create_snake(self):
+        for seg_number in STARTING_POSITIONS:
+            new_segments = Turtle("square")
+            new_segments.color("white")
+            new_segments.penup()
+            new_segments.goto(seg_number)
+            self.segments.append(new_segments)
+
+    def move(self):
+        for snake_index in range(len(self.segments) - 1, 0, -1):
+            new_x = self.segments[snake_index - 1].xcor()
+            new_y = self.segments[snake_index - 1].ycor()
+            self.segments[snake_index].goto(new_x, new_y)
+        self.segments[0].forward(MOVE_DISTANCE)
+
+    def up(self):
+        if self.head.heading() != DOWN:
+            self.head.setheading(90)
+
+    def down(self):
+        if self.head.heading() != UP:
+            self.head.setheading(270)
+
+    def left(self):
+        if self.head.heading() != RIGHT:
+            self.head.setheading(180)
+
+    def right(self):
+        if self.head.heading() != LEFT:
+            self.head.setheading(0)
+            
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#food.py
+
+from turtle import Turtle
+import random
+
+
+class Food(Turtle):
+    def __init__(self):
+        super(Food, self).__init__()
+        self.shape("circle")
+        self.penup()
+        self.shapesize(stretch_wid=0.5, stretch_len=0.5)
+        self.color("blue")
+        self.speed("fastest")
+
+    def refresh(self):
+        random_x = random.randint(-280, 280)
+        random_y = random.randint(-280, 280)
+        self.goto(random_x, random_y)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#scoreboard
+from turtle import Turtle
+
+
+class Scoreboard(Turtle):
+    def __init__(self):
+        super(Scoreboard, self).__init__()
+        self.score = 0
+        self.color("white")
+        self.penup()
+        self.goto(x=0, y=270)
+        self.hideturtle()
+        self.update_scoreboard()
+
+    def update_scoreboard(self):
+        self.write(f"Score: {self.score} ", align="center", font=("Arial ", 24, "normal"))
+
+    def increase_score(self):
+        self.score += 1
+        self.clear()
+        self.update_scoreboard()
