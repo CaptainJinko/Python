@@ -114,3 +114,49 @@ class Paddle(Turtle):
         new_y = self.paddle.ycor() - 20
         self.paddle.goto(self.paddle.xcor(), new_y)
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#ball.py
+#Ball class 
+#update to class ball
+#The second part the class ball
+#Additional attributes to the class object  atrribute to the  function move and
+#new fumction bounce and its aattribute to the ball bounce back from negative to postive cordinates 
+#Take note of self.y_move *= -1 negative one 
+
+from turtle import Turtle
+
+
+class Ball(Turtle):
+    def __init__(self):
+        super().__init__()
+        self.color("red")
+        self.shape("circle")
+        self.penup()
+        self.x_move = 10
+        self.y_move = 10
+
+
+    def move(self):
+        new_x = self.xcor() + self.x_move
+        new_y = self.ycor() + self.y_move
+        self.goto(new_x, new_y)
+
+    def bounce(self):
+        self.y_move *= -1
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#main.py
+addtinal method and conditinal if to the main.py at the  while section of the code 
+#ball.counce() method 
+
+game_on = True
+
+while game_on:
+    time.sleep(0.1)
+    screen.update()
+    ball.move()
+
+    if ball.ycor() > 280 or ball.ycor() < -280:
+        ball.bounce()
+
+screen.exitonclick()
+
