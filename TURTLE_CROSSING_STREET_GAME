@@ -1,0 +1,227 @@
+#The Turtle Crossing Capstone
+#first stage
+import time
+from turtle import Screen
+from player import Player
+from car_manager import CarManager
+from scoreboard import Scoreboard
+
+screen = Screen()
+screen.setup(width=600, height=600)
+screen.title("Traffic in  The City")
+
+
+game_is_on = True
+while game_is_on:
+    time.sleep(0.1)
+    screen.update()
+
+screen.exitonclick()
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#first stege
+#player.py 
+
+STARTING_POSITION = (0, -280)
+MOVE_DISTANCE = 10
+FINISH_LINE_Y = 280
+
+
+
+class Player:
+
+  pass
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#First stege
+#car_manager.py
+
+COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
+STARTING_MOVE_DISTANCE = 5
+MOVE_INCREMENT = 10
+
+
+class CarManager:
+  pass
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#main.py
+#second stege
+
+import time
+from turtle import Screen
+from player import Player
+from car_manager import CarManager
+from scoreboard import Scoreboard
+
+screen = Screen()
+screen.setup(width=600, height=600)
+screen.title("Traffic in  The City")
+screen.tracer(0)
+player = Player()
+car_manager = CarManager()
+new_car = CarManager()
+
+screen.listen()
+
+screen.onkey(player.go_up, "Up")
+
+game_is_on = True
+while game_is_on:
+    time.sleep(0.1)
+    screen.update()
+
+    car_manager.create_car()
+
+screen.exitonclick()
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#player.py
+#seconf stege
+
+from turtle import Turtle
+
+STARTING_POSITION = (0, -280)
+MOVE_DISTANCE = 10
+FINISH_LINE_Y = 280
+
+
+class Player(Turtle):
+    def __init__(self):
+        super().__init__()
+        self.shape("turtle")
+        self.penup()
+        self.setheading(90)
+        self.goto(STARTING_POSITION)
+
+    def go_up(self):
+        self.forward(MOVE_DISTANCE)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#car_manager second stege
+#car_mananger>py
+
+from turtle import Turtle
+import random
+
+COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
+STARTING_MOVE_DISTANCE = 5
+MOVE_INCREMENT = 10
+
+
+class CarManager:
+
+    def __init__(self):
+        self.all_cars = []
+
+    def create_car(self):
+        new_car = Turtle("square")
+        new_car.shapesize(stretch_wid=, stretch_len=2)
+        new_car.penup()
+        new_car.color(random.choice(COLORS))
+        random_y = random.randint(-250, 250)
+        new_car.goto(300, random_y)
+        self.all_cars.append(new_car)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#main.py
+The third stge of main.py the changes happened in the while loop
+
+game_is_on = True
+while game_is_on:
+    time.sleep(0.1)
+    screen.update()
+
+    car_manager.create_car()
+    car_manager.move_cars()
+
+screen.exitonclick()
+--------------------------------------------------------------------------------------------
+#playre.py
+The third stege of playre class , where the function go_pu , is declared amd move forward 
+
+class Player(Turtle):
+    def __init__(self):
+        super().__init__()
+        self.shape("turtle")
+        self.penup()
+        self.setheading(90)
+        self.goto(STARTING_POSITION)
+
+    def go_up(self):
+        self.forward(MOVE_DISTANCE)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+car_manager.py
+The third stege of car_manager where the function is set move backward
+
+    def move_cars(self):
+        for car in self.all_cars:
+            car.backward(STARTING_MOVE_DISTANCE)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+number 4
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#main.py
+#The fourth stege of main in the while loop 
+#Detect collision with car
+
+game_is_on = True
+while game_is_on:
+    time.sleep(0.1)
+    screen.update()
+
+    car_manager.create_car()
+    car_manager.move_cars()
+
+    # Detect collision with car
+    for car in car_manager.all_cars:
+        if car.distance(player) < 20:
+            game_is_on = False
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#number 5 of main.py 
+#How the turtle will resart agai form start 
+#In the while loop
+
+# Detect successful crossing
+    if player.is_at_finish_line():
+        player.go_to_start()
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#number 5, when turtle cross successfuly it return and  start again 
+#player.py
+
+     def go_to_start(self):
+        self.goto(STARTING_POSITION)
+
+    def is_at_finish_line(self):
+        if self.ycor() > FINISH_LINE_Y:
+            return True
+        else:
+            return False
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#fourth stage of car_manager
+#car_manager.py
+#How to increase the car speed everytime
+# add this to the attribute [self.car_speed = STARTING_MOVE_DISTANCE] and define the follwing functions 
+
+
+self.car_speed = STARTING_MOVE_DISTANCE
+
+    def move_cars(self):
+        for car in self.all_cars:
+            car.backward(self.car_speed)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    def level_up(self):
+        self.car_speed += MOVE_INCREMENT
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#main.py
+call this in 
+
+car_manager.level_up()
+
