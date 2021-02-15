@@ -123,7 +123,7 @@ class CarManager:
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #main.py
-The third stge of main.py the changes happened in the while loop
+The third stge of main.py the changes happened in the while loop, calling the function create_car() and move_cars()
 
 game_is_on = True
 while game_is_on:
@@ -134,9 +134,9 @@ while game_is_on:
     car_manager.move_cars()
 
 screen.exitonclick()
---------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #playre.py
-The third stege of playre class , where the function go_pu , is declared amd move forward 
+The third stege of player class , where the function go_up , is declared amd move forward 
 
 class Player(Turtle):
     def __init__(self):
@@ -151,7 +151,7 @@ class Player(Turtle):
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 car_manager.py
-The third stege of car_manager where the function is set move backward
+The third stege of car_manager where the function is set  move the cards backward from left to right ofthe screen
 
     def move_cars(self):
         for car in self.all_cars:
