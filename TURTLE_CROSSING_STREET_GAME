@@ -113,13 +113,15 @@ class CarManager:
         self.all_cars = []
 
     def create_car(self):
-        new_car = Turtle("square")
-        new_car.shapesize(stretch_wid=, stretch_len=2)
-        new_car.penup()
-        new_car.color(random.choice(COLORS))
-        random_y = random.randint(-250, 250)
-        new_car.goto(300, random_y)
-        self.all_cars.append(new_car)
+        #randon_chance= random.randint(1, 6) # when you want to slow down the number of cars generated to make possible for turtleto cross
+        if random_chance == 1
+          new_car = Turtle("square")
+          new_car.shapesize(stretch_wid=, stretch_len=2)
+          new_car.penup()
+          new_car.color(random.choice(COLORS))
+          random_y = random.randint(-250, 250)
+          new_car.goto(300, random_y)
+          self.all_cars.append(new_car)
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #main.py
