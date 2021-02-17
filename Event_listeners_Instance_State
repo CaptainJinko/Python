@@ -57,7 +57,7 @@ screen.onkey(key="d", fun=clock_wise)
 screen.onkey(key="c", fun=clear_screen)
 screen.exitonclick()
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Little bit cool but the avove code is better 
+#Little bit cool but the above code is better 
 from turtle import Turtle, Screen
 
 tim = Turtle()
@@ -96,7 +96,7 @@ screen.exitonclick()
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Object and state instances
-#Understanding the turtle voordinates
+#Understanding the turtle Cordinates
 
 from turtle import Turtle, Screen
 
@@ -119,14 +119,14 @@ screen.exitonclick()
 from turtle import Turtle, Screen
 import random
 
-is_race_on = False
+is_race_on = False 
 screen = Screen()
 screen.setup(width=500, height=400)
 user_bet = screen.textinput(title="Make your bet", prompt="Which turtle will win the race")
 colours = ["red", "orange", "black", "green", "blue", "purple"]
 
 y_positions = [-70, -40, -10, 20, 50, 80]
-all_turtle = []
+all_turtle = []  
 for turtle_index in range(0, 6):
 
     new_turtle = Turtle(shape="turtle")
