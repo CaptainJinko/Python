@@ -153,92 +153,45 @@ car_manager.py
 --------------------------------
 main.py
 #Detect collision of player (our tutle) with car 🚘, write the this code in main.py under while loop where you called those functions
-
- # Detect collision with car
-    for car in car_manager.all_cars:
-        if car.distance(player) < 20:
-            game_is_on = False
-
-------------------------------
-*********************************************************************************************************************************************************************************
-7
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #player.py
-#Successful crossing, the two fuctions below are the codes [FINISH_LINE_Y = 280] and [STARTING_POSITION = (0, -280)] 
-is contant already initialised, call this fuction in main.py
+#Detect collision with car, These are the methods for detecting collision with car and restart from the beginning 
 
-     def go_to_start(self):
-        self.goto(STARTING_POSITION)
+    def go_to_start(self):
+        if self.ycor() > 280:
+            self.goto(STARTING_POSITION)
 
-    def is_at_finish_line(self):
-        if self.ycor() > FINISH_LINE_Y:
-            return True
+    def at_finish_line(self):
+        if self.ycor() > FINISH_LINE:
+            return  True
         else:
             return False
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #main.py
-#write this conditional stateent in while loop
+#You loop and call the method under while loop, aftercrossing, it will go and start again
 
- if player.is_at_finish_line():
-        player.go_to_start()
+player.go_to_start()
+    player.at_finish_line()
 
-*********************************************************************************************************************************************************************************
-8
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#car_manager.py
-Increase the speed after any successful crossing add the follwing to car_manager attribute[ self.car_speed = STARTING_MOVE_DISTANCE]
-#Now inside the [move_cars] function, we can chanage the parameter as [self.car_speed]
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-class CarManager:
-    def __init__(self):
-        self.all_cars = []
-        self.car_speed = STARTING_MOVE_DISTANCE
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#car_manager.py
-#call the method in main under [go_to_start and is_at_finish_line] function 
-
-    def level_up(self):
-        self.car_speed += 10
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#main.py
-# call the function here 
-car_manager.level_up()
-*********************************************************************************************************************************************************************************
-9
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#scoreboard.py
-#to write the score of every crossing
-from turtle import Turtle
-FONT = ("Courier", 24, "normal")
-
-
-class Scoreboard(Turtle):
-    def __init__(self):
-        super().__init__()
-        self.level = 1
-        self.hideturtle()
-        self.penup()
-        self.goto(-280, 250)
-        self.update_scoreboard()
-
-    def update_scoreboard(self):
-        self.clear()
-        self.write(f"Level: {self.level}", align="Left", font=FONT)
-
-    def increase_level(self):
-        self.level += 1
-        self.update_scoreboard()
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#main.py
-#create your new scoreboard object from [scoreborad= Scoreboard()] class
-
-scoreboard = Scoreboard()
-# Detect collision with car
     for car in car_manager.all_cars:
         if car.distance(player) < 20:
             game_is_on = False
-            scoreboard.game_over()   
 
+    if player.at_finish_line():
+        player.go_to_start()
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#How to increase the speed of the car after successful crossing. include this attribute [self.car_speed = START_MOVE_DISTANCE] to car_manager class
+car_manager.py
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ class CarManager:
+    def __init__(self):
+        self.all_cars = []
+        self.car_speed = START_MOVE_DISTANCE
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+#and the methosd will look like this  
+
+    def level_up(self):
+        self.car_speed += 1
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
