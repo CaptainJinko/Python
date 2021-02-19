@@ -180,7 +180,7 @@ player.go_to_start()
     if player.at_finish_line():
         player.go_to_start()
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #How to increase the speed of the car after successful crossing. include this attribute [self.car_speed = START_MOVE_DISTANCE] to car_manager class
 car_manager.py
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -192,6 +192,192 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 #and the methosd will look like this  
 
-    def level_up(self):
-        self.car_speed += 1
+        def level_up(self):
+        self.car_speed += MOVE_INCREMENT
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#scoreboard.py
+stage one
+#writting and keep tracking of scores, with below code the text will be in the cordinate 00 center 
+from turtle import Turtle
+
+FONT = ("Courier", 24, "normal")
+
+
+class Scoreboard(Turtle):
+    def __init__(self):
+        super().__init__()
+        self.level = 1
+        self.hideturtle()
+        self.penup()
+        self.write(f"Level : {self.level}", align="left", font=FONT)
+--------------------------------------------------------------------------------------------
+#scoreboard.py
+#the code will update the scoreboard but it will be overwriting the numbers on top of each others, so call the methos [self.clear()] under update 
+from turtle import Turtle
+
+FONT = ("Courier", 24, "normal")
+
+
+class Scoreboard(Turtle):
+    def __init__(self):
+        super().__init__()
+        self.level = 1
+        self.hideturtle()
+        self.penup()
+        self.goto(-280, 250)
+        self.update_scoreboard()
+
+    def update_scoreboard(self):
+        self.write(f"Level {self.level}", align="left", font=FONT)
+
+    def increase_level(self):
+        self.level += 1
+        self.update_scoreboard()
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+#main
+# after calling  the method in here with groups 
+
+    if player.at_finish_line():
+        player.go_to_start()
+        car_manager.level_up()
+        scoreboard.increase_level()
+        scoreboard.increase_level()
+screen.exitonclick()  
+
+****************************************************************************************************************************************************
+main.py final code 
+from turtle import Screen
+from player import Player
+from car_manager import CarManager
+from scoreboard import Scoreboard
+import time
+
+screen = Screen()
+screen.title("The Schiedam Turtle Crossing Traffic")
+screen.setup(width=600, height=600)
+screen.tracer(0)
+
+player = Player()
+car_manager = CarManager()
+scoreboard = Scoreboard()
+
+player.go_up()
+
+screen.listen()
+screen.onkey(player.go_up, "Up")
+
+game_is_on = True
+while game_is_on:
+    time.sleep(0.1)
+    screen.update()
+    car_manager.create_car()
+    car_manager.move_cars()
+
+    for car in car_manager.all_cars:
+        if car.distance(player) < 20:
+            game_is_on = False
+
+    if player.at_finish_line():
+        player.go_to_start()
+        car_manager.level_up()
+        scoreboard.increase_level()
+
+screen.exitonclick()
+
+****************************************************************************************************************************************
+#palyer.py
+#final code of player
+from turtle import Turtle
+
+STARTING_POSITION = (0, -280)
+MOVE_DISTANCE = 10
+FINISH_LINE = 280
+
+
+class Player(Turtle):
+    def __init__(self):
+        super().__init__()
+        self.shape("turtle")
+        self.penup()
+        self.goto(STARTING_POSITION)
+        self.setheading(90)
+
+    def go_up(self):
+        self.forward(MOVE_DISTANCE)
+
+    def go_to_start(self):
+        if self.ycor() > 280:
+            self.goto(STARTING_POSITION)
+
+    def at_finish_line(self):
+        if self.ycor() > FINISH_LINE:
+            return  True
+        else:
+            return False
+**********************************************************************************************************************************
+#car_manager.py
+#final code of car_manager class
+from turtle import Turtle
+import random
+
+COLOURS = ["red", "blue", "black", "green", "purple", "pink"]
+START_MOVE_DISTANCE = 5
+STARTING_POSITION = 10
+MOVE_INCREMENT = 10
+
+
+class CarManager:
+    def __init__(self):
+        self.all_cars = []
+        self.car_speed = START_MOVE_DISTANCE
+
+    def create_car(self):
+
+        random_distance = random.randint(1, 6)
+        if random_distance == 1:
+            new_car = Turtle("square")
+            new_car.penup()
+            new_car.shapesize(stretch_wid=1, stretch_len=2)
+            new_car.color(random.choice(COLOURS))
+            random_y = random.randint(-250, 250)
+            new_car.goto(300, random_y)
+            self.all_cars.append(new_car)
+
+    def move_cars(self):
+        for car in self.all_cars:
+            car.backward(self.car_speed)
+
+    def level_up(self):
+        self.car_speed += MOVE_INCREMENT
+
+****************************************************************************************************************************************************
+#scoreboard.py
+#final code of scorebaord class
+
+from turtle import Turtle
+
+FONT = ("Courier", 24, "normal")
+
+
+class Scoreboard(Turtle):
+    def __init__(self):
+        super().__init__()
+        self.level = 1
+        self.hideturtle()
+        self.penup()
+        self.goto(-280, 250)
+        self.update_scoreboard()
+
+    def update_scoreboard(self):
+        self.clear()
+        self.write(f"Level {self.level}", align="left", font=FONT)
+
+    def increase_level(self):
+        self.level += 1
+        self.update_scoreboard()
+
+**************************************************************************************************************************************************
+
+
