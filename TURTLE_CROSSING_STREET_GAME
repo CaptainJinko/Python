@@ -114,7 +114,7 @@ To move the car, write the function in car_manager, the cars are the right side 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 main.py
-#To move the cars from left to right of the screen, [call car_manager.move_cars()] the function in while loop 
+#To move the cars from right to left of the screen, [call car_manager.move_cars()] the function in while loop 
 
 game_is_on = True
 while game_is_on:
@@ -129,7 +129,7 @@ screen.exitonclick()
 5
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 car_manager.py
-#There are many cars being generated every (0.1) seconds which will make it impposible for turtle to cross. To slow it down
+#There are many cars being generated every (0.1) seconds which will make it impposible for turtle to cross. To slow it down and create car every (1, 6) six times of a coin tossup
 # you need the following code in inserted in creat_car method as one of  its fields 
 --------------------------------------
 #random_chance = random.randint(1, 6)  
@@ -151,11 +151,9 @@ car_manager.py
 *********************************************************************************************************************************************************************************
 6
 --------------------------------
-main.py
-#Detect collision of player (our tutle) with car 🚘, write the this code in main.py under while loop where you called those functions
-#player.py
-#Detect collision with car, These are the methods for detecting collision with car and restart from the beginning 
+car_manager.py
 
+ #After successful crossing, turtle  should return to its origanl position to start the it over again
     def go_to_start(self):
         if self.ycor() > 280:
             self.goto(STARTING_POSITION)
@@ -168,14 +166,11 @@ main.py
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #main.py
-#You loop and call the method under while loop, aftercrossing, it will go and start again
+#You loop and call the method under while loop, after crossing, it will go and start again
 
 player.go_to_start()
     player.at_finish_line()
-
-    for car in car_manager.all_cars:
-        if car.distance(player) < 20:
-            game_is_on = False
+--------------------------------
 
     if player.at_finish_line():
         player.go_to_start()
@@ -243,7 +238,7 @@ class Scoreboard(Turtle):
         player.go_to_start()
         car_manager.level_up()
         scoreboard.increase_level()
-        scoreboard.increase_level()
+         
 screen.exitonclick()  
 
 *********************************************************************************************************************************************************************************
