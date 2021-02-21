@@ -242,7 +242,7 @@ class Scoreboard(Turtle):
 screen.exitonclick()  
 
 *********************************************************************************************************************************************************************************
-main.py final code 
+#main.py final code 
 from turtle import Screen
 from player import Player
 from car_manager import CarManager
@@ -257,8 +257,6 @@ screen.tracer(0)
 player = Player()
 car_manager = CarManager()
 scoreboard = Scoreboard()
-
-player.go_up()
 
 screen.listen()
 screen.onkey(player.go_up, "Up")
@@ -327,6 +325,7 @@ class Player(Turtle):
 *********************************************************************************************************************************************************************************
 #car_manager.py
 #final code of car_manager class
+
 from turtle import Turtle
 import random
 
