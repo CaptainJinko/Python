@@ -47,3 +47,85 @@ while is_game_on:
     # tirgger game_over
 
 screen.exitonclick()
+
+*********************************************************************************************************************************************************************************
+#Complete Solution of Snake class and it attributes 
+#snake>py
+
+from turtle import Turtle, Screen
+STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
+MOVE_DISTANCE = 20
+UP = 90
+DOWN = 270
+LEFT = 180
+RIGHT = 0
+
+
+class Snake:
+    def __init__(self):
+        self.segments = []
+        self.create_snake()
+        self.head = self.segments[0]
+
+    def create_snake(self):
+        for position in STARTING_POSITIONS:
+            self.add_segment(position)
+
+    def add_segment(self, position):
+        new_segments = Turtle("square")
+        new_segments.color("white")
+        new_segments.penup()
+        new_segments.goto(position)
+        self.segments.append(new_segments)
+
+    def extend(self):
+        self.add_segment(self.segments[-1].position())
+
+    def move(self):
+        for snake_index in range(len(self.segments) - 1, 0, -1):
+            new_x = self.segments[snake_index - 1].xcor()
+            new_y = self.segments[snake_index - 1].ycor()
+            self.segments[snake_index].goto(new_x, new_y)
+        self.segments[0].forward(MOVE_DISTANCE)
+
+    def up(self):
+        if self.head.heading() != DOWN:
+            self.head.setheading(90)
+
+    def down(self):
+        if self.head.heading() != UP:
+            self.head.setheading(270)
+
+    def left(self):
+        if self.head.heading() != RIGHT:
+            self.head.setheading(180)
+
+    def right(self):
+        if self.head.heading() != LEFT:
+            self.head.setheading(0)
+
+*******************************************************************************************************************************************************************************
+#food.py
+#Compltete Solution of food class and its atrributes 
+
+from turtle import Turtle
+import random
+
+
+class Food(Turtle):
+    def __init__(self):
+        super(Food, self).__init__()
+        self.shape("circle")
+        self.penup()
+        self.shapesize(stretch_wid=0.5, stretch_len=0.5)
+        self.color("green")
+        self.speed("fastest")
+
+    def refresh(self):
+        random_x = random.randint(-280, 280)
+        random_y = random.randint(-280, 280)
+        self.goto(random_x, random_y)
+        
+*******************************************************************************************************************************************************************************
+#scoreboard.[y
+#Compltete Solution of scoreboard class and its attribute 
