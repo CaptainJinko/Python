@@ -221,7 +221,7 @@ class Snake:
         
  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #snake.py
-#Snake2 continuesio of snake file , creating ,methods in snake to fetermines the direction of of movement by 
+#Snake2 continuesio of snake file , creating ,methods in snake to determine the direction of  movement  
  def up(self):
         self.segments[0].setheading(90)
 
