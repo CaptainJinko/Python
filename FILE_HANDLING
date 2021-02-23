@@ -1,0 +1,34 @@
+how read file contents
+here the file name is my_file.txt, the extension txt is very important 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+file = open("my_file.txt")
+contents= file.read()
+print(contents)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+At the end of work work, we have to close, 
+
+file = open("my_file.txt")
+contents= file.read()
+print(contents)
+file.close()# python usue some resource in your computer to close the
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# the best way in case you dont want to forget, use this one below, we dont have to remember to close our file with the below syntax
+
+with open("my_file.txt") as file:
+    contents = file.read()
+    print(contents)
+    
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#If i want to write into a file, 
+
+with open("my_file.txt", mode="w") as file:
+    file.write("New text.")
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#If youmant to delete a text, but add to it, you ada the "a" which meant append, if the file doesnt exist, it will create it for you
+with open("my_file.txt", mode="a") as file:
+    file.write("New text., My file name is Captain Jinko")
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
