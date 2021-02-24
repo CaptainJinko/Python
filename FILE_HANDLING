@@ -32,3 +32,49 @@ with open("my_file.txt", mode="a") as file:
     file.write("New text., My file name is Captain Jinko")
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# a file named "geek", will be opened with the reading mode. 
+file = open('geek.txt', 'r') 
+# This will print every line one by one in the file 
+for each in file: 
+	print (each) 
+----------------------------------------------------------------------------------------------------------------------------------------
+# Python code to create a file 
+file = open('geek.txt','w') 
+file.write("This is the write command") 
+file.write("It allows us to write in a particular file") 
+file.close() 
+------------------------------------------------------------------------------------------------------------------------------------------
+# Python code to illustrate with() 
+with open("file.txt") as file: 
+	data = file.read() 
+# do something with data 
+----------------------------------------------------------------------------------------------------------------------------------------------
+# Python code to illustrate with() alongwith write() 
+with open("file.txt", "w") as f: 
+	f.write("Hello World!!!") 
+-------------------------------------------------------------------------------------------------------------------------------------------------
+split() using file handling
+
+We can also split lines using file handling in Python. This splits the variable when space is encountered. 
+You can also split using any characters as we wish. Here is the code:
+
+# Python code to illustrate split() function 
+with open("file.text", "r") as file: 
+	data = file.readlines() 
+	for line in data: 
+		word = line.split() 
+		print (word) 
+---------------------------------------------------------------------------------------------------------------------------------------------------
+We will open first.txt in ‘r’ mode and will read the contents of first.txt. After that, we will open second.txt in ‘a’ mode and will append the content of first.txt into second.txt.
+
+
+# open both files 
+with open('first.txt','r') as firstfile, open('second.txt','a') as secondfile: 
+	
+	# read content from first file 
+	for line in firstfile: 
+			
+			# append content to second file 
+			secondfile.write(line)
+
+
