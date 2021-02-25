@@ -27,7 +27,7 @@ with open("my_file.txt", mode="w") as file:
     file.write("New text.")
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#If youmant to delete a text, but add to it, you ada the "a" which meant append, if the file doesnt exist, it will create it for you
+#If you dont want to delete a text, but add to it, in the parameter is "a" which meant append, if the file doesnt exist, it will create it for you
 with open("my_file.txt", mode="a") as file:
     file.write("New text., My file name is Captain Jinko")
 
@@ -37,22 +37,22 @@ file = open('geek.txt', 'r')
 # This will print every line one by one in the file 
 for each in file: 
 	print (each) 
-----------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Python code to create a file 
 file = open('geek.txt','w') 
 file.write("This is the write command") 
 file.write("It allows us to write in a particular file") 
 file.close() 
-------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Python code to illustrate with() 
 with open("file.txt") as file: 
 	data = file.read() 
 # do something with data 
-----------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Python code to illustrate with() alongwith write() 
 with open("file.txt", "w") as f: 
 	f.write("Hello World!!!") 
--------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 split() using file handling
 
 We can also split lines using file handling in Python. This splits the variable when space is encountered. 
@@ -64,8 +64,9 @@ with open("file.text", "r") as file:
 	for line in data: 
 		word = line.split() 
 		print (word) 
----------------------------------------------------------------------------------------------------------------------------------------------------
-We will open first.txt in ‘r’ mode and will read the contents of first.txt. After that, we will open second.txt in ‘a’ mode and will append the content of first.txt into second.txt.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#We will open first.txt in ‘r’ mode and will read the contents of first.txt. After that, 
+#we will open second.txt in ‘a’ mode and will append the content of first.txt into second.txt.
 
 
 # open both files 
