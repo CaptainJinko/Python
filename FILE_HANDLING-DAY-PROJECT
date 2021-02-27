@@ -50,19 +50,18 @@ with open("./Input/Letters/starting_letter.txt") as letter_file:
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 PLACEHOLDER = "[name]"
-
-with open("./Input/Names/invited_names.txt") as file:
-    names = file.readlines()
+with open("./Input/Names/invited_names.txt") as file_names:
+    names = file_names.readlines()
 
 with open("./Input/Letters/starting_letter.txt") as letter_file:
     letter_content = letter_file.read()
     for name in names:
         stripped_name = name.strip()
         new_letter = letter_content.replace(PLACEHOLDER, stripped_name)
-        print(new_letter)
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#We can write them to a new file
+#We can write them to a new file Note: the part letter_for_ is a format of name we want to python to write it. If a name does not exist in the derive, or in any 
+# of the files, python will create it for us. 
 
  	with open(f"./Output/ReadyToSend/letter_for_{stripped_name}.txt", mode="w") as completed_letter:
              completed_letter.write(new_letter)
