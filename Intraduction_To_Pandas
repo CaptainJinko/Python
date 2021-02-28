@@ -1,0 +1,92 @@
+# with open("weather_data.csv") as data_file:
+#     data = data_file.readlines()
+#     print(data)
+
+#How to print only the a clolumn based on its index 
+import  csv
+with open("weather_data.csv") as data_file:
+    data = csv.reader(data_file)
+    temperature = []
+    for row in data:
+        print(row[1])  
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#How to print only the list in the column without the heading or column title  
+
+import csv
+
+with open("weather_data.csv") as data_file:
+    data = csv.reader(data_file)
+    temperature = []
+    for row in data:
+        if row[1] != "temp":
+            temperature.append(row[1])
+    print(temperature)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#How to calculate Monday temp to Fahrenheit
+
+day,temp,condition
+Monday,12,Sunny
+Tuesday,14,Rain
+Wednesday,15,Rain
+Thursday,14,Cloudy
+Friday,21,Sunny
+Saturday,22,Sunny
+Sunday,24,Sunny
+
+import pandas
+
+data = pandas.read_csv("weather_data.csv")
+
+monday = data[data.day == "Monday"]
+monday_temp = int(monday.temp)
+monday_temp_F = monday_temp * 9 / 5 + 32
+print(monday_temp_F)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Exercises
+import pandas
+
+data = pandas.read_csv("weather_data.csv")
+# print(type(data))
+# print(data["temp"])
+
+data_dict = data.to_dict()
+# print(data_dict)
+
+# temp_list = data["temp"].to_list()
+# print(len(temp_list))
+# Average = sum(temp_list)/len(temp_list)
+# print(Average)
+# print(data["temp"].mean())
+#
+# print(data["temp"].max())
+
+# print(data["condition"])
+# print(data.condition)
+
+# print(data["temp"].max())
+
+# print(data.temp.max())
+# print(data[data.temp == data.temp.max()])
+
+monday = data[data.day == "Monday"]
+monday_temp = int(monday.temp)
+monday_temp_F = monday_temp * 9 / 5 + 32
+print(monday_temp_F)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+import pandas
+# Create a dataFrame from scratch, csv file will be created and all our files will added to the new_data.csv file 
+
+data_dict = {
+    "student": ["Amy ", " Jame", "Angela"],
+    "scores": [75, 56, 65]
+}
+
+data = pandas.DataFrame(data_dict)
+data.to_csv("new_data.csv")
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+In pandas, a data table is called a DataFrame.
+
+
