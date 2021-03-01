@@ -23,26 +23,7 @@ with open("weather_data.csv") as data_file:
             temperature.append(row[1])
     print(temperature)
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#How to calculate Monday temp to Fahrenheit
-
-day,temp,condition
-Monday,12,Sunny
-Tuesday,14,Rain
-Wednesday,15,Rain
-Thursday,14,Cloudy
-Friday,21,Sunny
-Saturday,22,Sunny
-Sunday,24,Sunny
-
-import pandas
-
-data = pandas.read_csv("weather_data.csv")
-
-monday = data[data.day == "Monday"]
-monday_temp = int(monday.temp)
-monday_temp_F = monday_temp * 9 / 5 + 32
-print(monday_temp_F)
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
 #Exercises
 import pandas
 
@@ -73,7 +54,25 @@ monday = data[data.day == "Monday"]
 monday_temp = int(monday.temp)
 monday_temp_F = monday_temp * 9 / 5 + 32
 print(monday_temp_F)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#How to calculate Monday temp to Fahrenheit
 
+day,temp,condition
+Monday,12,Sunny
+Tuesday,14,Rain
+Wednesday,15,Rain
+Thursday,14,Cloudy
+Friday,21,Sunny
+Saturday,22,Sunny
+Sunday,24,Sunny
+
+import pandas
+
+data = pandas.read_csv("weather_data.csv")
+
+monday = data[data.day == "Monday"]
+monday_temp = int(monday.temp)
+monday_temp_F = mond
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 import pandas
 # Create a dataFrame from scratch, csv file will be created and all our files will added to the new_data.csv file 
