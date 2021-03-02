@@ -23,16 +23,18 @@ with open("weather_data.csv") as data_file:
             temperature.append(row[1])
     print(temperature)
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- 
+ #How to find out the type 
 #Exercises
 import pandas
 
 data = pandas.read_csv("weather_data.csv")
-# print(type(data))
-# print(data["temp"])
+ print(type(data))   #will print the type as class list 
+ print(data["temp"])  
+
+#Convert it to dictonary
 
 data_dict = data.to_dict()
-# print(data_dict)
+print(data_dict)
 
 # temp_list = data["temp"].to_list()
 # print(len(temp_list))
