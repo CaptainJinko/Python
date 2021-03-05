@@ -1,0 +1,185 @@
+import turtle
+import pandas
+
+screen = turtle.Screen()
+screen.title("U.S States Game")
+image = "blank_states_img.gif"
+screen.addshape(image)
+ 
+turtle.shape(image)
+
+
+answer_state = screen.textinput(title="Guess the States", prompt="What is another states name?")
+print(answer_state)
+
+ 
+
+screen.exitonclick()
+------------------------------------------------------------------------------------------------
+
+import turtle
+import pandas
+
+screen = turtle.Screen()
+screen.title("U.S States Game")
+image = "blank_states_img.gif"
+screen.addshape(image)
+screen.setup(height=491, width=725)
+turtle.shape(image)
+
+data = pandas.read_csv("50_states.csv")
+all_states = data.state.to_list()
+
+answer_state = screen.textinput(title="Guess the States", prompt="What is another states name?")
+print(answer_state)
+
+if answer_state in all_states:
+    t = turtle.Turtle()
+    t.hideturtle()
+    t.penup()
+    state_data = data[data.state == answer_state]
+    t.goto(int(state_data.x), int(state_data.y))
+    t.write(answer_state)
+
+screen.exitonclick()
+-------------------------------------------------------------------------------------------------------
+#We want the guess to repeat itself anytimethe user makes a new guess. That come with while loop
+
+all_states = data.state.to_list()
+
+guessed_states = []
+
+while len(guessed_states) < 50:
+    answer_state = screen.textinput(title="Guess the States", prompt="What is another states name?")
+    print(answer_state)
+
+    if answer_state in all_states:
+        guessed_states.append(answer_state)
+        t = turtle.Turtle()
+        t.hideturtle()
+        t.penup()
+        state_data = data[data.state == answer_state]
+        t.goto(int(state_data.x), int(state_data.y))
+        t.write(answer_state)
+
+screen.exitonclick()
+-------------------------------------------------------------------------------------------------------------------------------------------
+#To keep on counting the states, we can write code the following to f-string [f"{len(guessed_states)} 0/50 States",] 
+while len(guessed_states) < 50:
+    answer_state = screen.textinput(title=f"{len(guessed_states)} 0/50 States", prompt="What is another states name?")
+
+-------------------------------------------------------------------------------------------------------------------
+#To ignore the case Sensitive of the letter we type in as far we get the spelling correct, use tile strin 
+#it will make the first string capaital even if you type in small letters 
+
+answer_state = screen.textinput(title=f"{len(guessed_states)} 0/50 States",
+                                    prompt="What is another states name?").title()
+
+-------------------------------------------------------------------------------------------------------------------------------
+#If we want to stop the game at anytime, we can code this uder the wile loo [if answer_state == "Exit": break] in that case we have delete
+#screen.exitonclick()
+
+---------------------------------------------------------------------------------
+#If want to the remaining states which were not guessed to be written, between the Exit conditinal and the break keyword
+    if answer_state == "Exit":
+
+        missing_states = []
+        for state in all_states:
+            if state not in guessed_states:
+                missing_states.append(state)
+        new_data = pandas.DataFrame(missing_states)
+        new_data.to_csv("state_to_learn.csv")
+
+        break
+----------------------------------------------------------------------------------------------------------------------
+#main.py
+#complate code
+import turtle
+import pandas
+
+screen = turtle.Screen()
+screen.title("U.S States Game")
+image = "blank_states_img.gif"
+screen.addshape(image)
+# screen.setup(height=491, width=725)
+turtle.shape(image)
+
+data = pandas.read_csv("50_states.csv")
+all_states = data.state.to_list()
+guessed_states = []
+
+while len(guessed_states) < 50:
+    answer_state = screen.textinput(title=f"{len(guessed_states)} 0/50 States",
+                                    prompt="What is another states name?").title()
+    if answer_state == "Exit":
+        missing_states = []
+        for state in all_states:
+            if state not in guessed_states:
+                missing_states.append(state)
+        new_data = pandas.DataFrame(missing_states)
+        new_data.to_csv("state_to_learn.csv")
+        break
+    if answer_state in all_states:
+        guessed_states.append(answer_state)
+        t = turtle.Turtle()
+        t.hideturtle()
+        t.penup()
+        state_data = data[data.state == answer_state]
+        t.goto(int(state_data.x), int(state_data.y))
+        t.write(answer_state)
+------------------------------------------------------------------------------------------
+#complete code or x and y cordinates 
+50_states.csv
+state,x,y
+Alabama,139,-77
+Alaska,-204,-170
+Arizona,-203,-40
+Arkansas,57,-53
+California,-297,13
+Colorado,-112,20
+Connecticut,297,96
+Delaware,275,42
+Florida,220,-145
+Georgia,182,-75
+Hawaii,-317,-143
+Idaho,-216,122
+Illinois,95,37
+Indiana,133,39
+Iowa,38,65
+Kansas,-17,5
+Kentucky,149,1
+Louisiana,59,-114
+Maine,319,164
+Maryland,288,27
+Massachusetts,312,112
+Michigan,148,101
+Minnesota,23,135
+Mississippi,94,-78
+Missouri,49,6
+Montana,-141,150
+Nebraska,-61,66
+Nevada,-257,56
+New Hampshire,302,127
+New Jersey,282,65
+New Mexico,-128,-43
+New York,236,104
+North Carolina,239,-22
+North Dakota,-44,158
+Ohio,176,52
+Oklahoma,-8,-41
+Oregon,-278,138
+Pennsylvania,238,72
+Rhode Island,318,94
+South Carolina,218,-51
+South Dakota,-44,109
+Tennessee,131,-34
+Texas,-38,-106
+Utah,-189,34
+Vermont,282,154
+Virginia,234,12
+Washington,-257,193
+West Virginia,200,20
+Wisconsin,83,113
+Wyoming,-134,90
+------------------------------
+blank_state_img.gif
