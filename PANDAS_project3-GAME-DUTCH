@@ -1,0 +1,60 @@
+import turtle
+import pandas
+
+screen = turtle.Screen()
+screen.title("The Dutch Game")
+screen.setup(width=491, height=725)
+image = "holland_provinces.gif"
+screen.addshape(image)
+turtle.shape(image)
+
+data = pandas.read_csv("holland_states.csv")
+all_provinces = data.states.to_list()
+
+guess_state = []
+
+while len(guess_state) < 22:
+    answer_provinces=screen.textinput(title=f"{len(guess_state)}0/22 states"
+                                      ,prompt="What is another state?").title()
+    if answer_provinces == "Exit":
+        missing_state =[]
+        for state in all_provinces:
+            if state not in guess_state:
+                missing_state.append(state)
+        new_data = pandas.DataFrame(missing_state)
+        new_data.to_csv("Dutch province(s) to learn")
+        break
+    if answer_provinces in all_provinces:
+        t = turtle.Turtle()
+        t.hideturtle()
+        t.penup()
+        states_data = data[data.states == answer_provinces]
+        t.goto(int(states_data.x), int(states_data.y))
+        t.write(answer_provinces)
+
+#screen.mainloop()
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+states,x,y
+Groningen,108,190
+Drenthe,100,90
+Friesland,44,265
+Leeuwarden,20,150
+Noord Holland,-60,78
+Amsterdam,-87,58
+Flevoland,15,45
+Utrecht,-15,-20
+Overijseel,90,50
+Zwolle,113,82
+Zuid Holland,-100,-50
+Rotterdam,-133,-92
+Zeeland,-210,-70
+Middleburg,-253,-154
+Noord Brabant,-22,-110
+Breda,-68,-133
+Den Bosch,9,-80
+Eindhoven,29,-173
+Gelderland,80,-27
+Arnhem,115,-56
+Limburg,40,-150
+Maatstrich,67,-311
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
