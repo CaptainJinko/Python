@@ -31,8 +31,7 @@ passed_students = {
     for (student, grade) in student_grades.items() if grade >= 60
 }
 print(passed_students)
------------------------------------------------------------------------------
-https://www.geeksforgeeks.org/
+
 Comprehensions in Python
 Last Updated : 14 Nov, 2018
 Comprehensions in Python provide us with a short and concise way to construct new sequences (such as lists, set, dictionary etc.) using sequences which have been already defined.
@@ -171,8 +170,3 @@ print("Output values using generator comprehensions:", end = ' ')
 for var in output_gen: 
 	print(var, end = ' ') 
 -----------------------------------------------------------------------------------
-
-
-
-
-
