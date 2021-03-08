@@ -1,0 +1,16 @@
+To open any directory or file 
+dir 
+To change to any directory
+cd name of the directory
+To make a directroy
+mkdir and name the directory
+To remove directory or file 
+rmdir space name of the directory or file
+To see all hidden file and directory 
+dir /a
+
+If thedirectory is not empty and you want to delete it or remove it 
+rmdir /s and choose Y
+If you want to go to the starting point of you command 
+press Home 
+
