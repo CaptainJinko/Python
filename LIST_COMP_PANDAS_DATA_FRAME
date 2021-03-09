@@ -1,0 +1,77 @@
+If we want to loop in a dictionary and print the keys and values 
+student_dict ={
+    "student": ["Angela", "James", "Lily"],
+    "scores":[56, 76, 98]
+}
+
+for (key, value) in student_dict.items():
+    print(key,value)   //print will print key or value or both 
+
+--------------------------------------------------------------------------
+To use panadas to create DataFrame, we can use it to loop data in DataFrame
+
+student_dict={
+  "student": ["Elias", "James", "Lily"],
+  "scores":[100, 90, 65]
+}
+
+for (key, value) in student_dict.items():
+  print(value)
+  
+import pandas
+student_dict = pandas.DataFrame(student_dict)
+print(student_dict)
+------------------------------------------------------------------------------------
+
+import pandas
+
+student_dict = {
+    "student": ["Elias", "James", "Lily"],
+    "scores": [100, 90, 65]
+}
+
+# for (key, value) in student_dict.items():
+#   print(value)
+
+
+student_data_frame = pandas.DataFrame(student_dict)
+for (key, value) in student_data_frame.items():
+    print(key, value)
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+#This is not useful we can not print rows , we just priting the dataframe , but pandas has built in method calle [iterrows] where loop rows in the dataFrame 
+#we can tapinto any row by using the dot notation Ge print(row.student) or print(row.score) tap keys or values
+import pandas
+ 
+student_dict ={
+    "student":["Elias", "Angela", "Zamqras", "Captain"],
+    "scores":[100, 98, 58, 68,]
+}
+
+student_Data_Frame = pandas.DataFrame(student_dict)
+# for (index, row) in student_Data_Frame.iterrows():
+#     print(index, row)
+for (index, row) in student_Data_Frame.iterrows():
+    print(row)
+
+student_dict = {
+    "student": ["Elias", "James", "Lily"],
+    "scores": [100, 90, 65]
+}
+
+student_data_frame = pandas.DataFrame(student_dict)
+for (index, row) in student_data_frame.iterrows():
+    print(index, row)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#We can go furhter to loop as 
+import pandas
+student_dict ={
+    "student":["Elias", "Angela", "Zamqras", "Captain"],
+    "scores":[100, 98, 58, 68,]
+}
+
+student_Data_Frame = pandas.DataFrame(student_dict)
+# for (index, row) in student_Data_Frame.iterrows():
+#     print(index, row)
+for (index, row) in student_Data_Frame.iterrows():
+    if row.student == "Elias":
+        print(row.scores)
