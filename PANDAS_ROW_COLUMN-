@@ -73,7 +73,7 @@ print("\nIterating over rows using iloc function :\n")
 # 0th and 2nd index column respectively. 
 for i in range(len(df)) : 
 print(df.iloc[i, 0], df.iloc[i, 2]) 
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Method #4 : Using iterrows() method of the Dataframe
 # import pandas package as pd 
 import pandas as pd 
