@@ -1,0 +1,49 @@
+#*args :Unlimited position argument, Many position argument
+def add(*args):
+    Sum = 0
+    for n in args:
+        Sum += n
+    print(Sum)
+
+
+add(1, 2, 3, 4, 25)
+------------------------------------------------------------------------------------
+def add(*args):
+    Sum = 0
+    for n in args:
+        Sum+=n
+    return Sum
+
+
+print(add(1, 2, 3, 4))
+-------------------------------------------------------------------------
+#We can also specify position of the by print(args[1]) as in the exmaple below
+def add(*args):
+    print(args[2])
+    Sum = 0
+    for n in args:
+        Sum += n
+    return Sum
+
+
+print(add(1, 2, 3, 4, 4,7,9))
+------------------------------------------------
+def calculate(**kwargs):
+    print(kwargs)
+    for key, value in kwargs.items():
+        print(key)
+        print(value)
+
+
+calculate(add=3, multiply=5)
+
+----------------------------------------------------------------
+class Car:
+    def __init__(self, **kw):
+        self.make = kw["make"]
+        self.model = kw["model"]
+
+
+my_car = Car(make="Nissan",model="GT_R")
+print(my_car.model)
+------------------------------------------------------------
