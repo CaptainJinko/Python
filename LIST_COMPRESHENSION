@@ -1,13 +1,14 @@
+#To add a list to an exixting list by using for loop
 #For Loop
 numbers = [1, 2, 3]
 new_list = []
 for n in numbers:
     add_1 = n + 1
     new_list.append(add_1)
-
-#List Comprehension
+---------------------------------------------------
+#ti a list to an existing by using  List Comprehension
 new_list = [n + 1 for n in numbers]
-
+--------------------------------------------------  -
 #String as List
 name = "Angela"
 letters_list = [letter for letter in name]
@@ -34,7 +35,7 @@ print(passed_students)
 
 Comprehensions in Python
 Last Updated : 14 Nov, 2018
-Comprehensions in Python provide us with a short and concise way to construct new sequences (such as lists, set, dictionary etc.) using sequences which have been already defined.
+List Comprehensions in Python provide us with a short and concise way to construct new sequences (such as lists, set, dictionary etc.) using sequences which have been already defined.
 Python supports the following 4 types of comprehensions:
 List Comprehensions
 Dictionary Comprehensions
@@ -97,7 +98,7 @@ dict_using_comp = {var:var ** 3 for var in input_list if var % 2 != 0}
 
 print("Output Dictionary using dictionary comprehensions:", dict_using_comp) 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Example #2: Given two lists containing the names of states and their corresponding capitals, construct a dictionary which maps the states with their respective capitals. 
+Example #2: Given two lists containing the names of states and their corresponding capitals,  construct a dictionary which maps the states with their respective capitals. 
 Let’s see how to do this using for loops and dictionary comprehension.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 state = ['Gujarat', 'Maharashtra', 'Rajasthan'] 
@@ -203,8 +204,9 @@ student_data_frame = pandas.DataFrame(student_dict)
 for (key, value) in student_data_frame.items():
     print(key, value)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#This is not useful we can not print rows , we just priting the dataframe , but pandas has built in method calle [iterrows] where loop rows in the dataFrame 
-#we can tapinto any row by using the dot notation Ge print(row.student) or print(row.score) tap keys or values
+#This is not useful we can not print rows , we just 
+priting the dataframe , but pandas has builtin method calle [iterrows] where can loop rows in the dataFrame 
+#we can tap into any row by using the dot notation Eg print(row.student) or print(row.score) tap keys or values
 import pandas
  
 student_dict ={
