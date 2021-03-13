@@ -7,8 +7,8 @@ student_dict ={
 for (key, value) in student_dict.items():
     print(key,value)   //print will print key or value or both 
 
---------------------------------------------------------------------------
-To use panadas to create DataFrame, we can use it to loop data in DataFrame
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+To use panadas to create DataFrame, we can  loop data in DataFrame
 
 student_dict={
   "student": ["Elias", "James", "Lily"],
@@ -37,8 +37,8 @@ student_dict = {
 student_data_frame = pandas.DataFrame(student_dict)
 for (key, value) in student_data_frame.items():
     print(key, value)
-----------------------------------------------------------------------------------------------------------------------------------------------------------
-#This is not useful we can not print rows , we just priting the dataframe , but pandas has built in method calle [iterrows] where loop rows in the dataFrame 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#This is not useful we can not print rows , we just priting the dataframe , but pandas has built in method called [iterrows] where loop rows in the dataFrame 
 #we can tapinto any row by using the dot notation Ge print(row.student) or print(row.score) tap keys or values
 import pandas
  
@@ -61,7 +61,7 @@ student_dict = {
 student_data_frame = pandas.DataFrame(student_dict)
 for (index, row) in student_data_frame.iterrows():
     print(index, row)
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #We can go furhter to loop as 
 import pandas
 student_dict ={
