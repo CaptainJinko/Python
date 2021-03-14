@@ -9,3 +9,85 @@ my_label.pack()
 
 window.mainloop()
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#To set position where the text will appear on scree, left right, top bottom in my_label
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1
+my_label = tkinter.Label(text="I am a label", font=("Arial", 24, "bold "))
+my_label.pack(side="top")
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2
+#the best way is import it like that will give acces to all the class so we just create our object direclt
+
+from tkinter import *
+
+window = Tk()
+window.title("My First GUI program")
+window.minsize(width=500, height=300)
+my_label = Label(text="I am a label", font=("Arial", 24, "bold "))
+my_label.pack(side="top")
+
+#label
+my_label["text"]= "New Text"
+my_label.config(fg="red", bg="blue")
+
+#button
+buttom = Button()
+
+
+window.mainloop()
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3
+
+#Button and label. Getting the button to event by clicking. and getting the text to print in console
+#Getting the printed text on the label 
+#Note anything there is no pack method called will not show on the screen
+
+my_label.config(text="New Text")
+
+# button
+def button_clicked():
+    print("I got clicked")
+    my_label.config(text="Button Got clicked")
+
+
+button = Button(text="Click me", command=button_clicked)
+button.pack()
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4
+my_label.config(text="New Text")
+
+# button
+def button_clicked():
+    print("I got clicked")
+    my_label.config(text="Button Got clicked")
+
+button = Button(text="Click me", command=button_clicked)
+button.pack()
+
+window.mainloop()
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#To het inteaction with entry and the button 
+my_label["text"] = "New Text"
+my_label.config(text="New Text")
+
+
+# button
+def button_clicked():
+    print("I got clicked")
+    new_text = input.get()
+    my_label.config(text=new_text)
+
+
+button = Button(text="Click me", command=button_clicked)
+
+button.pack()
+# Entry
+
+input = Entry(width=10)
+input.pack()
+print(input.get())
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
