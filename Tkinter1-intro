@@ -47,7 +47,7 @@ my_label.config(text="New Text")
 # button
 def button_clicked():
     print("I got clicked")
-    my_label.config(text="Button Got clicked")
+    my_label.config(text="Button Got clicked")   #this parenthesis can contain any string any text 
 
 
 button = Button(text="Click me", command=button_clicked)
