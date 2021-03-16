@@ -89,5 +89,27 @@ input.pack()
 print(input.get())
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+from tkinter import *
+
+window = Tk()
+window.title("My First GUI Program")
+window.minsize(width=500, height=300)
+
+
+def button_clicked():
+    print("I got Clicked")
+    new_text = my_text_input.get()
+    my_label.config(text=new_text)
+
+
+my_label = Label(text="I am a label",font=("Arial", 24, "bold") )
+my_button = Button(text="Clicked me", command=button_clicked)
+my_text_input = Entry(width=10)
+
+my_text_input.pack()
+my_button.pack()
+my_label.pack()
+
+window.mainloop()
 
 
