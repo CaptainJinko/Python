@@ -1,0 +1,28 @@
+#How to work or use pack(), place(), grid() grid is more precise than the rest. If you want padding aroound any widget you also use config(pdx= ...., padx= ... ) arround any widget
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+from tkinter import *
+
+window = Tk()
+window.title('My First GUI Programe')
+window.minsize(width=500, height=300)
+window.config(padx=100, pady=200)
+
+
+def clicked_button():
+    print('I got clicked')
+    new_text = my_text_input.get()
+    my_label.config(text=my_text_input.get())
+    my_label.config(padx=50, pady=50)
+
+
+my_label = Label(text='Clicked here', font=('Arial', 24))
+my_label.grid(column=0, row=0)
+
+my_button = Button(text='Clicked me ', fg='red', bg='yellow', command=clicked_button)
+my_button.grid(column=2, row=2)
+
+my_text_input = Entry(width=20)
+print(my_text_input.get())
+my_text_input.grid(column=3, row=0)
+
+window.mainloop()
