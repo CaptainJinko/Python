@@ -1,4 +1,4 @@
-Tkniter6-PROJECT
+#Tkniter6-PROJECT
 #Tkniter, Canvas widget and image to Tkinter
 
 from tkinter import *
@@ -12,8 +12,6 @@ FONT_NAME = "Courier"
 WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
-
-
 
 # ---------------------------- UI SETUP-----------------------------------------------------------------------------------------------------------------------------------------#
 
@@ -47,14 +45,23 @@ window.mainloop()
  
 
 # ----------------------------TIMER RESET---------------------------------------------------------------------------------------------------------------------------------------#
-
+#[2]
+def start_timer():
+    count_down(5)
 
 # -----------------------------TIMER MECHANISM-----------------------------------------------------------------------------------------------------------------------------------
+[1] To update the counting in pomodora timer, or in the canvas, is by assigning the canvas where it write text by a variable called [timer = canvas.create_text.....]
+#by calling the particular canvas like [canvas.itemconfig(timer_text, text=count)]
+#The beginning of count down mechanism
+#def count_down(count):
+    if count>0:
+        print(count)
+        window.after(1000, count_down, count - 1)
+       
+count_down(10)  calling the function [window]      
 
+# ----------------------------------------------------------------------------COUNTDOWN MECHANISM-------------------------------------------------------------------------------#
 
-# ---------------------------- COUNTDOWN MECHANISM------------------------------------------------------------------------------------------------------------------------------#
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Changing a text in canvas is diffrent from label, 
 #you have tap to particular canvas you want:Eg: canvas.itemconfig () in the methos you pass in the particular item 
 
