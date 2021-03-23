@@ -53,10 +53,14 @@ def start_timer():
 [1] To update the counting in pomodora timer, or in the canvas, is by assigning the canvas where it write text by a variable called [timer = canvas.create_text.....]
 #by calling the particular canvas like [canvas.itemconfig(timer_text, text=count)]
 #The beginning of count down mechanism
-#def count_down(count):
-    if count>0:
-        print(count)
-        window.after(1000, count_down, count - 1)
+def count_down(count):
+     count_min= math.floor(cout/60)
+     count_sec = count % 60
+    if count < 10:
+       counbt_sec = f"0{count_sec}"
+    canvas.itemconfig(timer_text, text =f"{count_min}:{count_sec}")
+    if count > 0:
+       window.after(1000, count_down, count - 1)
     else:
         start_timer()
      
