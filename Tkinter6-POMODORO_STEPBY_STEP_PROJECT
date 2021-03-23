@@ -45,9 +45,23 @@ window.mainloop()
  
 
 # ----------------------------TIMER RESET---------------------------------------------------------------------------------------------------------------------------------------#
-#[2]
+#[2a]
 def start_timer():
     count_down(5)
+**********************
+[2b]
+def start_timer():
+    global resp
+    resp += 1
+    work_sec = WORK_MIN * 1
+    short_break = SHORT_BREAK_MIN * 60
+    long_break = LONG_BREAK_MIN * 60
+    if resp % 8 == 0:
+        count_down(long_break)
+    elif resp % 2 == 0:
+        count_down(short_break)
+    else:
+        count_down(work_sec)
 
 # -----------------------------TIMER MECHANISM-----------------------------------------------------------------------------------------------------------------------------------
 [1] To update the counting in pomodora timer, or in the canvas, is by assigning the canvas where it write text by a variable called [timer = canvas.create_text.....]
