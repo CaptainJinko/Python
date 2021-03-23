@@ -57,8 +57,9 @@ def start_timer():
     if count>0:
         print(count)
         window.after(1000, count_down, count - 1)
-       
-count_down(10)  calling the function [window]      
+    else:
+        start_timer()
+     
 
 # ----------------------------------------------------------------------------COUNTDOWN MECHANISM-------------------------------------------------------------------------------#
 
