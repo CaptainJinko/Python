@@ -1,3 +1,27 @@
+fruits = ["Apple", "Pear", "Orange"]
+
+def make_pie(index):
+    fruit = fruits[index]
+    print(fruit + "Pie")
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+a = [1, 2, 3]
+try:
+    print("The second element=%d" %(a[3]))
+except IndexError:
+    print("An Error Occurred")
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
+make_pie(4)
+
+
+a = [1, 2, 3]
+try:
+    print("The second element=%d" %(a[3]))
+except IndexError:
+    print("An Error Occurred")
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Python Exception Handling
 Difficulty Level : Medium
 Last Updated : 26 Jun, 2020
@@ -25,17 +49,8 @@ Example:
 Try and Except in Exception Handling
 Let us try to access the array element whose index is out of bound and handle the corresponding exception.
 # Python program to handle simple runtime error
-
-a = [1, 2, 3]
-try:
-	print "Second element = %d" %(a[1])
-
-	# Throws error since there are only 3 elements in array
-	print "Fourth element = %d" %(a[3])
-
-except IndexError:
-	print "An error occurred"
------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 A try statement can have more than one except clause, to specify handlers for different exceptions. Please note that at most one handler will be executed.
 
 # Program to handle multiple errors with one except statement
@@ -47,12 +62,12 @@ try :
 		b = a/(a-3)
 	
 	# throws NameError if a >= 4
-	print "Value of b = ", b
+	print (Value of b = ", b)
 
 # note that braces () are necessary here for multiple exceptions
 except(ZeroDivisionError, NameError):
-	print "\nError Occurred and Handled"
--------------------------------------------------------------------------
+	print ("\nError Occurred and Handled")
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Else Clause
 In python, you can also use else clause on the try-except block which must be present after all the except clauses. The code enters the else block only if the try clause does not raise an exception.
 
