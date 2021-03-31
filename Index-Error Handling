@@ -1,0 +1,271 @@
+Python Exception Handling
+Difficulty Level : Medium
+Last Updated : 26 Jun, 2020
+We have explored basic python till now from Set 1 to 4 (Set 1 | Set 2 | Set 3 | Set 4).
+
+Error in Python can be of two types i.e. Syntax errors and Exceptions. Errors are the problems in a program due to which the program will 
+stop the execution. On the other hand, exceptions are raised when some internal events occur which changes the normal flow of the program.
+The difference between Syntax Error and Exceptions
+Syntax Error: As the name suggest this error is caused by wrong syntax in the code. It leads to the termination of the program.
+
+Example
+# initialize the amount variable
+amount = 10000
+
+# check that You are eligible to
+# purchase Dsa Self Paced or not
+if(amount>2999)
+	print("You are eligible to purchase Dsa Self Paced")
+	
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Exceptions: Exceptions are raised when the program is syntactically correct but the code resulted in an error. 
+This error does not stop the execution of the program, however, it changes the normal flow of the program.
+
+Example:
+Try and Except in Exception Handling
+Let us try to access the array element whose index is out of bound and handle the corresponding exception.
+# Python program to handle simple runtime error
+
+a = [1, 2, 3]
+try:
+	print "Second element = %d" %(a[1])
+
+	# Throws error since there are only 3 elements in array
+	print "Fourth element = %d" %(a[3])
+
+except IndexError:
+	print "An error occurred"
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+A try statement can have more than one except clause, to specify handlers for different exceptions. Please note that at most one handler will be executed.
+
+# Program to handle multiple errors with one except statement
+try :
+	a = 3
+	if a < 4 :
+
+		# throws ZeroDivisionError for a = 3
+		b = a/(a-3)
+	
+	# throws NameError if a >= 4
+	print "Value of b = ", b
+
+# note that braces () are necessary here for multiple exceptions
+except(ZeroDivisionError, NameError):
+	print "\nError Occurred and Handled"
+-------------------------------------------------------------------------
+Else Clause
+In python, you can also use else clause on the try-except block which must be present after all the except clauses. The code enters the else block only if the try clause does not raise an exception.
+
+# Program to depict else clause with try-except
+
+# Function which returns a/b
+def AbyB(a , b):
+	try:
+		c = ((a+b) / (a-b))
+	except ZeroDivisionError:
+		print "a/b result in 0"
+	else:
+		print c
+
+# Driver program to test above function
+AbyB(2.0, 3.0)
+AbyB(3.0, 3.0)
+--------------------------------------------------------------------
+Finally Keyword in Python
+Python provides a keyword finally, which is always executed after try and except blocks. The finally block always executes after normal termination of try block or after try block terminates due to some exception.
+
+Syntax:
+
+# Python program to demonstrate finally
+	
+# No exception Exception raised in try block
+try:
+	k = 5//0 # raises divide by zero exception.
+	print(k)
+	
+# handles zerodivision exception	
+except ZeroDivisionError:	
+	print("Can't divide by zero")
+		
+finally:
+	# this block is always executed
+	# regardless of exception generation.
+	print('This is always executed')
+-----------------------------------------------------------------------------
+# Python program to demonstrate finally
+	
+# No exception Exception raised in try block
+try:
+	k = 5//0 # raises divide by zero exception.
+	print(k)
+	
+# handles zerodivision exception	
+except ZeroDivisionError:	
+	print("Can't divide by zero")
+		
+finally:
+	# this block is always executed
+	# regardless of exception generation.
+	print('This is always executed')
+
+
+# Program to depict Raising Exception
+
+try:
+	raise NameError("Hi there") # Raise Error
+except NameError:
+	print "An exception"
+	raise # To determine whether the exception was raised or not
+-------------------------------------------------------------------------------------
+The output of the above code will simply line printed as “An exception” 
+\but a Runtime error will also occur in the last due to raise statement in the last line. 
+So, the output on your command line will look like
+
+Python | Raising an Exception to Another Exception
+Last Updated : 12 Jun, 2019
+Let’s consider a situation where we want to raise an exception in response to catching a different exception but want to include information about both exceptions in the traceback.
+
+To chain exceptions, use the raise from statement instead of a simple raise statement. This will give you information about both errors.
+
+Code #1 :
+
+def example():
+    try:
+        int('N/A')
+    except ValueError as e:
+        raise RuntimeError('A parsing error occurred') from e...
+  
+example()
+Output :
+
+Traceback (most recent call last):
+  File "", line 3, in example
+ValueError: invalid literal for int() with base 10: 'N/A'
+This exception is the direct cause of the following exception –
+
+
+---------------------------------------------------------------------
+Both exceptions are captured in the traceback. A normal except statement is used to catch such an exception. However, __cause__ attribute of the exception object can be looked to follow the exception chain as explained in the code given below.
+
+Code #2 :
+try:
+	example()
+except RuntimeError as e:
+	print("It didn't work:", e)
+	if e.__cause__:
+		print('Cause:', e.__cause__)
+
+-----------------------------------------------------------------
+In the code below, the NameError exception is raised as the result of a programming error, not in direct response 
+to the parsing error. For this case, the __cause__ attribute of an exception is not set. Instead, a __context__ attribute is set to the prior exception.
+
+def example3():
+	try:
+		int('N / A')
+	except ValueError:
+		raise RuntimeError('A parsing error occurred') from None...
+
+ ----------------------------------------------------------------------------------
+In the code below, the NameError exception is raised as the result of a programming error, not in direct response to the parsing error. For this case, the __cause__ attribute of an exception is not set. Instead, a __context__ attribute is set to the prior exception.
+
+Code #4 : To suppress chaining, use raise from None
+
+def example3():
+	try:
+		int('N / A')
+	except ValueError:
+		raise RuntimeError('A parsing error occurred') from None...
+
+example3()
+*******************************************************************************
+Multiple Exception Handling in Python
+Difficulty Level : Hard
+Last Updated : 12 Jun, 2019
+Given a piece of code that can throw any of several different exceptions, and one needs to account for all of the potential exceptions that could be raised without creating duplicate code or long, meandering code passages.
+
+If you can handle different exceptions all using a single block of code, they can be grouped together in a tuple as shown in the code given below :
+
+Code #1 :
+try:
+	client_obj.get_url(url)
+except (URLError, ValueError, SocketTimeout):
+	client_obj.remove_url(url)
+---------------------------------------------------------------------------------
+The remove_url() method will be called if any of the listed exceptions occurs. If, on the other hand, if one of the exceptions has to be handled differently, then put it into its own except clause as shown in the code given below :
+
+Code #2 :
+
+try:
+	client_obj.get_url(url)
+except (URLError, ValueError):
+	client_obj.remove_url(url)
+except SocketTimeout:
+	client_obj.handle_url_timeout(url)
+---------------------------------------------------------
+
+Many exceptions are grouped into an inheritance hierarchy. For such exceptions, all of the exceptions can be caught by simply specifying a base class.
+For example, instead of writing code as shown in the code given below –
+
+try:
+	f = open(filename)
+except (FileNotFoundError, PermissionError):
+	...
+Except statement can be re-written as in the code given below. This works because OSError is a base class that’s common to both the FileNotFoundError and PermissionError exceptions.
+
+try:
+	f = open(filename)
+except OSError:
+	...
+-----------------------------------------------------------
+Although it’s not specific to handle multiple exceptions per se, it is worth noting that one can get a handle to the thrown exception using them as a keyword as shown in the code given below.
+
+Code #5 :
+
+try:
+	f = open(filename)
+
+except OSError as e:
+	if e.errno == errno.ENOENT:
+		logger.error('File not found')
+	elif e.errno == errno.EACCES:
+		logger.error('Permission denied')
+	else:
+		logger.error('Unexpected error: % d', e.errno)
+--------------------------------------------------------------------------
+
+The e variable holds an instance of the raised OSError. This is useful if the exception has to be invested further, such as processing it based on the value of the additional status code. The except clauses are checked in the order listed and the first match executes.
+
+Code #6 : Create situations where multiple except clauses might match
+
+f = open('missing')
+
+
+f = open('missing')
+------------------------------
+
+try:
+	f = open('missing')
+	except OSError:
+		print('It failed')
+	except FileNotFoundError:
+		print('File not found')
+--------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Code #3 :
