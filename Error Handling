@@ -1,3 +1,4 @@
+
 fruits = ["Apple", "Pear", "Orange"]
 
 #TODO: Catch the exception and make sure the code runs without crashing.
@@ -313,3 +314,53 @@ try:
 	except FileNotFoundError:
 		print('File not found')
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Keyword Method with iterrows()
+# {new_key:new_value for (index, row) in df.iterrows()}
+#first soultion [A]
+is_ok = True
+
+import pandas
+
+while is_ok:
+    try:
+        data = pandas.read_csv("nato_phonetic_alphabet.csv")
+        # TODO 1. Create a dictionary in this format:
+        phonetic_dict = {row.letter: row.code for (index, row) in data.iterrows()}
+        print(phonetic_dict)
+        # TODO 2. Create a list of the phonetic code words from a word that the user inputs.
+        word = input("Enter a word: ").upper()
+        output_list = [phonetic_dict[letter] for letter in word]
+        print(output_list)
+    except KeyError:
+        print("Enter alphabetic only ")
+
+    else:
+        is_ok = False
+
+
+-----------------------------------------------------------------------------------
+#The best is this Second Solution[B]
+
+# Keyword Method with iterrows()
+# {new_key:new_value for (index, row) in df.iterrows()}
+ 
+
+import pandas
+data = pandas.read_csv("nato_phonetic_alphabet.csv")
+# TODO 1. Create a dictionary in this format:
+phonetic_dict = {row.letter: row.code for (index, row) in data.iterrows()}
+print(phonetic_dict)
+
+def generate_phonetics():
+
+# TODO 2. Create a list of the phonetic code words from a word that the user inputs.
+    try:
+        word = input("Enter a word: ").upper()
+        output_list = [phonetic_dict[letter] for letter in word]
+    except KeyError:
+        print("Sorry,only alphabetic letter please")
+        generate_phonetics()
+    else:
+        print(output_list)
+
+generate_phonetics()
