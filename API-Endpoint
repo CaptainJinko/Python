@@ -1,0 +1,65 @@
+
+#to request for an API, the first simple step is, go to the website for its API, copy and paste 
+#the url in the code below
+
+import requests
+
+response =requests.get(url="http://api.open-notify.org/iss-now.json")
+print(response)
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# if you wanted to know the actual status code instead of just a response object, 
+response =requests.get(url="http://api.open-notify.org/iss-now.json")
+print(response.status_code)
+ -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+import requests
+
+response =requests.get(url="http://api.open-notify.org/iss-now.json")
+response.raise_for_status()
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#But for now, the first thing we need to get hold of is the actual data from thisparticular API. To do that,
+#we tap into our response and we get the JSON data.So this is the actual data. And when I print it,
+import requests
+
+response =requests.get(url="http://api.open-notify.org/iss-now.json")
+data = response.json()
+print(data)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#we can tap into it just like we would for any Python dictionary.We could use some square brackets and then type in the name of a key that we're
+import requests
+
+response =requests.get(url="http://api.open-notify.org/iss-now.json")
+data = response.json()["iss_position"]
+print(data)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+import requests
+response =requests.get(url="http://api.open-notify.org/iss-now.json")
+data = response.json()["iss_position"]["longitude"]
+print(data)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#So we can go even further and tag on another set of square brackets and try to get hold of, say the longitude.And now we get that actual piece of data. There you have it.
+
+import requests
+
+response =requests.get(url="http://api.open-notify.org/iss-now.json")
+data = response.json()["iss_position"]["longitude"]
+print(data)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#We get access to the longitude by tapping into our data in the format of a JSON and then getting the iss_position. And inside that dictionary,
+#we can get hold of the longitude. And we can do the same thing in order to get
+
+import requests
+response =requests.get(url="http://api.open-notify.org/iss-now.json")
+
+data = response.json()
+longitude=data["iss_position"]["longitude"]
+latitude=data["iss_position"]["latitude"]
+iss_position=(longitude, latitude)
+print(iss_position)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+if you wanna see where that particular latitude and longitude is on the world
+map, then we can use a tool called latlong.net.
+So if you go to geographic tools and go to latitude and longitude to address,
+then you can paste in the longitude and latitude values that we got from
+our API. And when we click convert, then you'll see on the map
