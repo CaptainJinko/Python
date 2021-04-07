@@ -1,4 +1,4 @@
-
+#DAY33
 #to request for an API, the first simple step is, go to the website for its API, copy and paste 
 #the url in the code below
 
@@ -15,10 +15,10 @@ import requests
 
 response =requests.get(url="http://api.open-notify.org/iss-now.json")
 response.raise_for_status()
-
+ 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#But for now, the first thing we need to get hold of is the actual data from thisparticular API. To do that,
-#we tap into our response and we get the JSON data.So this is the actual data. And when I print it,
+#But for now, the first thing we need to get hold of is the actual data from this particular API. To do that,
+#we tap into our response and we get the JSON data. So this is the actual data. And when you print it,
 import requests
 
 response =requests.get(url="http://api.open-notify.org/iss-now.json")
