@@ -1,5 +1,5 @@
 #DAY33
-#to request for an API, the first simple step is, go to the website for its API, copy and paste 
+#one of the most important aspects of an API is the API endpoint. to request for an API, the first simple step is, go to the website for its API, copy and paste 
 #the url in the code below
 
 import requests
