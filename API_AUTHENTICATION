@@ -1,0 +1,114 @@
+#Day35
+# https://openweathermap.org/
+#AP_AUTHENTICATION 
+
+api.openweathermap.org/data/2.5/weather?q=London&appid={API key}
+
+
+
+e422b867de32dadf1f59ce4859bde8e5
+
+lat: 51.917900
+lng: 4.400250
+
+https://api.openweathermap.org/data/2.5/onecall
+
+---------------------------------------------------------
+So you could look at the current weather data, the hourly forecast,
+the one call API,
+api.openweathermap.org/data/2.5/weather. That's the end
+point.
+-------------------------------------------------------------------------
+import requests
+
+MY_LAT = 51.917900
+MY_LON = 4.400250
+
+OWM_Endpoint = "https://api.openweathermap.org/data/2.5/onecall"
+api_key = "e422b867de32dadf1f59ce4859bde8e5"
+
+weather_params = {
+    "lat": MY_LAT,
+    "lon": MY_LON,
+    "appid": api_key
+}
+
+
+response = requests.get(OWM_Endpoint, params=weather_params)
+print(response.status_code)
+data = response.json()
+print(data)
+# latitude=data["lat"]
+# longitude=data["lon"]
+# timezone=data["timezone"]
+# sunrise=data["current"]["pressure"]
+# print(data)
+# print(latitude, longitude)
+# print(timezone)
+# print(sunrise)
+---------------------------------------------------------------------------------------------
+#After printing in the console, copy and from the console past the bove code at  http://jsonviewer.stack.hu/
+where you can read them data in best format 
+-----------------------------------
+import requests
+
+MY_LAT = 51.917900
+MY_LON = 4.400250
+
+OWM_Endpoint = "https://api.openweathermap.org/data/2.5/onecall"
+api_key = "e422b867de32dadf1f59ce4859bde8e5"
+
+weather_params = {
+    "lat": MY_LAT,
+    "lon": MY_LON,
+    "appid": api_key,
+    "exclude": "current,minutely,daily"
+}
+
+response = requests.get(OWM_Endpoint, params=weather_params)
+response.raise_for_status()
+weather_data = response.json()
+weather_slice =weather_data["hourly"][:12]
+print(weather_slice)
+
+--------------------------------------------------------------
+response = requests.get(OWM_Endpoint, params=weather_params)
+response.raise_for_status()
+weather_data = response.json()
+weather_slice = weather_data["hourly"][:12]
+for hour_data in weather_slice:
+    print(hour_data["weather"][0]["id"])
+----------------------------------------------------------------
+#[A]complete weather data request 
+import requests
+
+MY_LAT = 51.917900
+MY_LON = 4.400250
+
+OWM_Endpoint = "https://api.openweathermap.org/data/2.5/onecall"
+api_key = "e422b867de32dadf1f59ce4859bde8e5"
+
+weather_params = {
+    "lat": MY_LAT,
+    "lon": MY_LON,
+    "appid": api_key,
+    "exclude": "current,minutely,daily"
+}
+
+response = requests.get(OWM_Endpoint, params=weather_params)
+response.raise_for_status()
+weather_data = response.json()
+weather_slice = weather_data["hourly"][:12]
+
+will_rain = False
+
+for hour_data in weather_slice:
+    condition_code = hour_data["weather"][0]["id"]
+    if int(condition_code) > 700:
+        will_rain = True
+
+if will_rain:
+    print("Bring an Umbrella")
+# print(weather_data["hourly"][0]["weather"][0]["id"])
+
+ 
