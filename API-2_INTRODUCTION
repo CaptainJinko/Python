@@ -1,4 +1,10 @@
-#tHE BELOW LINK IS WHERE TO TEST READ YOUR API DATA IN JSON FORMAT
+#TO CHECK API OF WEATHER https://home.openweathermap.org/api_keys
+#TO SEND SMS ATHOMATIC https://www.twilio.com/console/phone-numbers/incoming
+#TO CHECK THE CURRENT WEATHER CONDIOTION ANYHWERE GLOBALLY https://www.ventusky.com/?p=30.4;-97.8;5&l=rain-3h&t=20210415/0600&w=strong
+#TO RUN YOU PROJECT YOUR SCHEDULE TIME https://www.pythonanywhere.com/user/eliasjinko/tasks_tab/ 
+#TO LOCATE LATITUDE AND LONGITUDE https://www.latlong.net/
+
+#THE BELOW LINK IS WHERE TO TEST READ YOUR API DATA IN JSON FORMAT
 http://jsonviewer.stack.hu/      
 
 
