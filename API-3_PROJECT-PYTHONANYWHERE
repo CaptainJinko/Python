@@ -1,0 +1,198 @@
+import requests
+from twilio.rest import Client
+
+MY_LAT = 51.507351
+MY_LON = -0.127758
+
+OWM_Endpoint = "https://api.openweathermap.org/data/2.5/onecall"
+api_key = "e422b867de32dadf1f59ce4859bde8e5"
+account_sid=("ACe63a1d54c6b42d4741738e576ca7c5b5")     
+auth_token=("c1261d2d1e81231cc6e5062e611da54f")  #get this fromthe twilio dashnoard
+
+weather_params = {
+    "lat": MY_LAT,
+    "lon": MY_LON,
+    "appid": api_key,
+    "exclude": "current,minutely,daily"
+}
+
+response = requests.get(OWM_Endpoint, params=weather_params)
+response.raise_for_status()
+weather_data = response.json()
+weather_slice = weather_data["hourly"][:12]
+
+wil_rain = False
+
+for hour_data in weather_slice:
+    condition_code = hour_data["weather"][0]["id"]
+    if int(condition_code) > 700:
+        wil_rain = True
+
+if wil_rain:
+    client = Client(account_sid, auth_token)
+    message = client.messages \
+        .create(
+        body="It's going to rain today. Remember to bring to an umbrella.",
+        from_="++18035922403",
+        to="+31619885860",
+    )
+    print(message)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Now that we've tested our code and we've managed to get it working locally,
+#the next step is to put our script online so that it can be run on schedule and
+#we don't have to manually open up PyCharm and run it every morning at 7:00 AM.
+#How do we do this? Well, we're going to use Python anywhere,
+https://www.pythonanywhere.com/user/eliasjinko/files/home/eliasjinko
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+import requests
+from twilio.rest import Client
+
+MY_LAT = 51.507351
+MY_LON = -0.127758
+
+OWM_Endpoint = "https://api.openweathermap.org/data/2.5/onecall"
+api_key = "e422b867de32dadf1f59ce4859bde8e5"
+account_sid=("ACe63a1d54c6b42d4741738e576ca7c5b5")     
+auth_token=("c1261d2d1e81231cc6e5062e611da54f")  #get this fromthe twilio dashnoard
+
+weather_params = {
+    "lat": MY_LAT,
+    "lon": MY_LON,
+    "appid": api_key,
+    "exclude": "current,minutely,daily"
+}
+
+response = requests.get(OWM_Endpoint, params=weather_params)
+response.raise_for_status()
+weather_data = response.json()
+weather_slice = weather_data["hourly"][:12]
+
+wil_rain = False
+
+for hour_data in weather_slice:
+    condition_code = hour_data["weather"][0]["id"]
+    if int(condition_code) > 700:
+        wil_rain = True
+
+if wil_rain:
+    client = Client(account_sid, auth_token)
+    message = client.messages \
+        .create(
+        body="It's going to rain today. Remember to bring to an umbrella.",
+        from_="++18035922403",
+        to="+31619885860",
+    )
+    print(message)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Now that we've tested our code and we've managed to get it working locally,
+#the next step is to put our script online so that it can be run on schedule and
+#we don't have to manually open up PyCharm and run it every morning at 7:00 AM.
+#How do we do this? Well, we're going to use Python anywhere,
+https://www.pythonanywhere.com/user/eliasjinko/files/home/eliasjinko
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+So let's go ahead and locate this in our computer,
+
+and then we're going to upload it to Python anywhere.
+
+There you go.
+
+Now let's open up this file and click bash console here.
+
+So that's going to create our console down at the bottom.
+import requests
+from twilio.rest import Client
+
+MY_LAT = 51.507351
+MY_LON = -0.127758
+
+OWM_Endpoint = "https://api.openweathermap.org/data/2.5/onecall"
+api_key = "e422b867de32dadf1f59ce4859bde8e5"
+account_sid=("ACe63a1d54c6b42d4741738e576ca7c5b5")     
+auth_token=("c1261d2d1e81231cc6e5062e611da54f")  #get this fromthe twilio dashnoard
+
+weather_params = {
+    "lat": MY_LAT,
+    "lon": MY_LON,
+    "appid": api_key,
+    "exclude": "current,minutely,daily"
+}
+
+response = requests.get(OWM_Endpoint, params=weather_params)
+response.raise_for_status()
+weather_data = response.json()
+weather_slice = weather_data["hourly"][:12]
+
+wil_rain = False
+
+for hour_data in weather_slice:
+    condition_code = hour_data["weather"][0]["id"]
+    if int(condition_code) > 700:
+        wil_rain = True
+
+if wil_rain:
+    client = Client(account_sid, auth_token)
+    message = client.messages \
+        .create(
+        body="It's going to rain today. Remember to bring to an umbrella.",
+        from_="++18035922403",
+        to="+31619885860",
+    )
+    print(message)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Now that we've tested our code and we've managed to get it working locally,
+#the next step is to put our script online so that it can be run on schedule and
+#we don't have to manually open up PyCharm and run it every morning at 7:00 AM.
+#How do we do this? Well, we're going to use Python anywhere,
+https://www.pythonanywhere.com/user/eliasjinko/files/home/eliasjinko
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+import requests
+from twilio.rest import Client
+
+MY_LAT = 32.776665
+MY_LON = -96.796989
+
+OWM_Endpoint = "https://api.openweathermap.org/data/2.5/onecall"
+api_key = "e422b867de32dadf1f59ce4859bde8e5"
+account_sid=("ACe63a1d54c6b42d4741738e576ca7c5b5")
+auth_token=("c1261d2d1e81231cc6e5062e611da54f")
+
+weather_params = {
+    "lat": MY_LAT,
+    "lon": MY_LON,
+    "appid": api_key,
+    "exclude": "current,minutely,daily"
+}
+
+response = requests.get(OWM_Endpoint, params=weather_params)
+response.raise_for_status()
+weather_data = response.json()
+weather_slice = weather_data["hourly"][:12]
+
+wil_rain = False
+
+for hour_data in weather_slice:
+    condition_code = hour_data["weather"][0]["id"]
+    if int(condition_code) > 700:
+        wil_rain = True
+
+if wil_rain:
+    client = Client(account_sid, auth_token)
+    message = client.messages \
+        .create(
+        body="It's going to rain today. Remember to bring to an umbrella",
+        from_="++18035922403",
+        to="+31619885860",
+    )
+    print(message.status)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+So let's go ahead and locate this in our computer,and then we're going to upload it to Python anywhere.There you go.Now let's open up this file and click bash console
+here.So that's going to create our console down at the bottom.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+So let's go ahead and locate this in our computer,and then we're going to upload it to Python anywhere.There you go.Now let's open up this file and click bash console here.
+So that's going to create our console down at the bottom.
