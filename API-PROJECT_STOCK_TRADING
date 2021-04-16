@@ -1,0 +1,65 @@
+[DYDHDTBYV36LCOV8]APIKEY
+This website https://www.alphavantage.co/
+
+PROJECT STOCK_TRADING
+
+import requests
+
+STOCK_NAME = "TSLA"
+COMPANY_NAME = "Tesla Inc"
+
+STOCK_ENDPOINT = "https://www.alphavantage.co/query"
+NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
+STOCK_API_KEY = "DYDHDTBYV36LCOV8"
+
+## STEP 1: Use https://www.alphavantage.co/documentation/#daily
+
+stock_parameter = {
+    "function": "TIME_SERIES_DAILY",
+    "symbol": STOCK_NAME,
+    "apikey": STOCK_API_KEY
+
+}
+response = requests.get(STOCK_ENDPOINT, params=stock_parameter)
+data = response.json()["Time Series (Daily)"]
+
+print(data)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#it's a really big dictionary with the key being the date.it is a big dictionationry #How about turning this large dictionary into a list where we get each of the, pieces of data that's associated with each of the keys? To do that,
+#So we're actually only interested in the values. So we can put that in here
+so that each item in this new list is composed of only the values and not the
+keys.we're going to need to do a bit of a list comprehension. create a variable data_list = [new item for in list ]
+
+response = requests.get(STOCK_ENDPOINT, params=stock_parameter)
+data = response.json()["Time Series (Daily)"]
+data_list = [value for (key, value) in data.items()]
+print(data_list)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#For Yesterdays data, when it becomes the 23rd, then yesterday's date is going to change.
+yesterday_data = data_list[0]
+yesterday_closing_price=yesterday_data["4. close"]
+print(yesterday_closing_price)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#To-do number three involves finding the positive difference between step one and two,
+#so yesterday's closing price and the day before yesterday's closing price.Now the hint takes us to the Python abs function,
+#It's a function that returns the absolute value of a number.So it basically just gets rid of any negative sign in front of a number.
+#code below
+
+difference=abs(float(yesterday_closing_price) - float(day_before_yesterday_closing_price))
+print(difference)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#The difference is going to be yesterday's closing price subtract by the day before yesterday's closing price. Now,
+#because these two are strings, if we actually run the code right now,you're going to get an error.
+#so we can quite easily convert them into a floating point numbers just by wrapping the float function around them. If we print that out,
+
+diff_percent= (difference/float(yesterday_closing_price))*100
+print(diff_percent)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# TODO 5. - If TODO4 percentage is greater than 5 then print("Get News").this place depends on the time
+#TSLA stock might less or more then 5 so adjust the figure otherswise the print get new might 
+#not print
+
+if diff_percent > 5:
+    print("Get news ")
+
