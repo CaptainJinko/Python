@@ -1,0 +1,56 @@
+Advanced Authentication 
+
+#header and we're also going to be learning how to make POST, PUT and DELETE requests
+#Now there's also four other common types of requests that we should probably know about; post put and delete.
+Well, the first thing is the URL endpoint
+[A] work on this site [https://pixe.la/]
+
+import requests
+
+pixela_endpoint = "https://pixe.la/v1/users"
+TOKEN = "eliasadamjinkozamqras321#"
+user_params = {
+    "token": TOKEN,
+    "username": "jinko",
+    "agreeTermsOfService": "yes",
+    "notMinor": "yes",
+
+}
+
+response=requests.post(url=pixela_endpoint, json=user_params)
+print(response.text)
+
+
+----------------------------------------------------------------------------------------
+And this is going to be comprised of the Pixela endpoint
+
+and then in addition, it's going to be / our username.
+
+So let's take out our username and our token and put it as a constant at the top.
+Right Now we can add that in here using an f-string and then finally it's /graphs.
+Now, remember if you're doing this along with me, this username is going to have to be your own unique username and the token is
+going to be your own secret token. Once we've created our graph end point, the next step is to make our post request
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Creating a graph and using more secure methods on auhentcation
+
+graph_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs"
+
+graph_config = {
+    "id": "graph1",
+    "name": "Programming Graph",
+    "unit": "Lesson",
+    "type": "int",
+    "color": "momiji",
+}
+
+headers={
+    "X-USER-TOKEN": TOKEN
+}
+response = requests.post(url=graph_endpoint, json=graph_config, headers=headers)
+print(response.text)
+
+
+
+
+
