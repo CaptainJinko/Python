@@ -1,9 +1,8 @@
 #PROJECT-HABIT-TRAKER
 Advanced Authentication 
 
-#header and we're also going to be learning how to make POST, PUT and DELETE requests
-#Now there's also four other common types of requests that we should probably know about; post put and delete.
-Well, the first thing is the URL endpoint
+#header and we're also going to be learning how to make POST, PUT and DELETE requests Now there's also four other common types of requests that we should probably know about;
+post put and delete.Well, the first thing is the URL endpoint
 [A] work on this site [https://pixe.la/]
 
 import requests
@@ -24,15 +23,13 @@ print(response.text)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 And this is going to be comprised of the Pixela endpoint
-
 and then in addition, it's going to be / our username.
 
 So let's take out our username and our token and put it as a constant at the top.Right Now we can add that in here using an f-string and then finally it's /graphs.
 Now, remember if you're doing this along with me, this username is going to have to be your own unique username and the token is
 going to be your own secret token. 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Once we've created our graph end point, the next step is to make our post request
-#Creating a graph and using more secure methods on auhentcation
+#Once we've created our graph end point, the next step is to make our post request #Creating a graph and using more secure methods on auhentcation
 
 graph_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs"
 
@@ -51,9 +48,8 @@ response = requests.post(url=graph_endpoint, json=graph_config, headers=headers)
 print(response.text)
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-our URL is going to be this new pixel creation endpoint.Our JSON that we're going to pass over is our pixel_data,
-and finally,we're going to reuse the headers that we had from previously,
-because it still contains the same token that we need to authenticate ourselves.So let's see what is the response that we get back.
+our URL is going to be this new pixel creation endpoint.Our JSON that we're going to pass over is our pixel_data,and finally,we're going to reuse the headers that we had from 
+previously,because it still contains the same token that we need to authenticate ourselves.So let's see what is the response that we get back.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 pixel_creation_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}"
@@ -64,10 +60,10 @@ pixel_data = {
 
 }
 response = requests.post(url=pixel_creation_endpoint, json=pixel_data, headers=headers)
-print(response)
+print(response.text)
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #How to get the date automated 
-oday = datetime(year=2021, month=4, day=18)
+today = datetime(year=2021, month=4, day=18)
 print(today)
 pixel_data = {
     "date": today.strftime("%Y%m%d"),
