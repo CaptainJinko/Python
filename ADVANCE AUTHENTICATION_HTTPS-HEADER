@@ -27,19 +27,18 @@ And this is going to be comprised of the Pixela endpoint
 
 and then in addition, it's going to be / our username.
 
-So let's take out our username and our token and put it as a constant at the top.
-Right Now we can add that in here using an f-string and then finally it's /graphs.
+So let's take out our username and our token and put it as a constant at the top.Right Now we can add that in here using an f-string and then finally it's /graphs.
 Now, remember if you're doing this along with me, this username is going to have to be your own unique username and the token is
-going to be your own secret token. Once we've created our graph end point, the next step is to make our post request
-
+going to be your own secret token. 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Once we've created our graph end point, the next step is to make our post request
 #Creating a graph and using more secure methods on auhentcation
 
 graph_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs"
 
 graph_config = {
-    "id": "graph1",
-    "name": "Programming Graph",
+    "id": "graph3119",
+    "name": "Python Programming Graph",
     "unit": "Lesson",
     "type": "int",
     "color": "momiji",
