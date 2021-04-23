@@ -22,8 +22,7 @@ print(response.text)
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-And this is going to be comprised of the Pixela endpoint
-and then in addition, it's going to be / our username.
+And this is going to be comprised of the Pixela endpoint and then in addition, it's going to be our username.
 
 So let's take out our username and our token and put it as a constant at the top.Right Now we can add that in here using an f-string and then finally it's /graphs.
 Now, remember if you're doing this along with me, this username is going to have to be your own unique username and the token is
