@@ -1,0 +1,24 @@
+print(soup.prettify()) function or property will indent your code properly 
+print(soup.a)    will give the first anchor tag
+print(soup.p)     will give us the firts paragraph
+print(soup.li) will give the first list 
+
+
+soup= BeautifulSoup(contents, "html.parser")
+# print(soup.title)
+# print(soup.title.string)
+# print(soup.prettify())
+# print(soup.a)
+# print(soup.p)
+# print(soup.ul)
+All_anchor_tags=soup.findAll(name="a")
+ # print(All_anchor_tags)
+
+for tag in All_anchor_tags:
+    # print(tag.getText())
+
+    print(tag.get("href"))
+
+heading_section=soup.find(name="h3", class_="heading") #Because we have class as keyword, use class_ 
+print(heading_section)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
