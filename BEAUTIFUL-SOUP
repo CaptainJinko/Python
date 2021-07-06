@@ -1,3 +1,5 @@
+#https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+
 print(soup.prettify()) function or property will indent your code properly 
 print(soup.a)    will give the first anchor tag
 print(soup.p)     will give us the firts paragraph
@@ -19,7 +21,7 @@ for tag in All_anchor_tags:
 
     print(tag.get("href"))
 
-heading_section=soup.find(name="h3", class_="heading") #Because we have class as keyword, use class_ 
+heading_section=soup.find(name="h3", class_="heading") #Because we have class as a keyword, use class_ 
 print(heading_section)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
