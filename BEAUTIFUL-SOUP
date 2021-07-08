@@ -47,29 +47,7 @@ print(heading_section)
 
 # heading_section=soup.find(name="h3", class_="heading")
 # print(heading_section)
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-from bs4 import BeautifulSoup
-import requests
-
-response=requests.get("https://news.ycombinator.com/news")
-yc_web_page= response.text
-
-soup=BeautifulSoup(yc_web_page, "html.parser")
-articles =soup.find_all(name="a", class_="storylink")
-articlce_texts=[]
-article_links=[]
-for article_tag in articles:
-
-    text= article_tag.getText()
-    articlce_texts.append(text)
-    link= article_tag.getText("href")
-    article_links.append(link)
-
-article_upvotes= [ score.getText() for score in soup.find_all(name = "span", class_ = "score")]
-
-print(articlce_texts)
-print(article_links)
-print(article_upvotes)
+ 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # All_anchor_tag=soup.findAll(name="a")
 # # print(All_anchor_tag)
@@ -124,13 +102,13 @@ and they live at the bottom of well</p>
 </body>
 </html>
 
------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 from bs4 import BeautifulSoup
 
 with open("QuickStart.html") as file:
     contents=file.read()
     print(contents)
---------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 soup= BeautifulSoup(contents, "html.parser")
 # print(soup.prettify())
@@ -144,19 +122,19 @@ for link in soup.find_all("a"):
 http://example.com/elsie
 http://example.com/lacie
 http://example.com/tillie
-------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Another common task is extracting all the text from a page:
 
 
 
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 from bs4 import BeautifulSoup
 import requests
 
 response = requests.get("https://news.ycombinator.com/news")
 yc_page = response.text
-# print(yc_combinator)
+ 
 soup = BeautifulSoup(yc_page, "html.parser")
 articles = soup.find_all(name="a", class_="storylink")
 
@@ -173,22 +151,22 @@ article_upvote = [score.getText() for score in soup.find_all(name="span", class_
 print(article_text)
 print(article_links)
 print(article_upvote)
------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #We want the item and also  split the number 
 # print(article_text)
 # print(article_links)
 print(article_upvote[0].split())
-----------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #print(int(article_upvote[0].split()[0]))
 
-----------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 article_upvote = [int(score.getText().split()[0])for score in soup.find_all(name="span", class_ ="score")]
 
 print(article_text)
 print(article_links)
 print(article_upvote)
 
--------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #we can sort the number and get the number with highest value
 
 
@@ -197,7 +175,7 @@ article_upvote = [int(score.getText().split()[0])for score in soup.find_all(name
 print(article_text)
 print(article_links)
 print(article_upvote)
-------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
