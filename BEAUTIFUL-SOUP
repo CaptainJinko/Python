@@ -176,6 +176,35 @@ print(article_text)
 print(article_links)
 print(article_upvote)
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+from bs4 import BeautifulSoup
+import requests
 
+response=requests.get("https://news.ycombinator.com/news")
+pc_page= response.text
+
+soup= BeautifulSoup(pc_page, "html.parser")
+articles=soup.find_all(name="a", class_="storylink")
+
+article_text=[]
+article_link=[]
+
+for article_tag in articles:
+    text=article_tag.getText()
+    article_text.append(text)
+    link=article_tag.getText("href")
+    article_link.append(link)
+
+article_upvote=[int( score.getText().split()[0]) for score in soup.find_all(name="span", class_="score")]
+
+large_number=max(article_upvote)
+large_num_index=article_upvote.index(large_number)
+print(article_text[large_num_index])
+print(article_link[large_num_index])
+print(large_number)
+
+print(article_text)
+print(article_link)
+print(article_upvote)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
