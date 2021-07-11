@@ -1,0 +1,34 @@
+all_movies=soup.find_all(name="div", class_="jsx-3821216435 listicle-item")
+# print(all_movies)
+# movies_title=[movie.getText() for movie in all_movies]
+for movie in all_movies:
+    # print(movie.getText("href"))
+    movie_title=movie.getText("href")
+    print(movie_title)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+from bs4 import BeautifulSoup
+import requests
+
+URL = "https://www.empireonline.com/movies/features/best-movies-2/"
+
+response = requests.get(URL)
+website_html = response.text
+# print(movies)
+
+soup = BeautifulSoup(website_html, "html.parser")
+# print(soup.prettify())
+
+all_movies = soup.find_all(name="div", class_="jsx-3821216435 listicle-item")
+
+movies_title = [movie.getText() for movie in all_movies]
+movies=movies_title[::-1]
+
+with open("movies.txt", mode="w") as file:
+    for movie in movies:
+        file.write(f"{movie}\n")
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# for movie in all_movies:
+#     movie_title = movie
+#     print(movie_title.getText())
