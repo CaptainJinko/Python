@@ -25,3 +25,31 @@ print(search_bar.tag_name)
 driver.quit()
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+from selenium import webdriver
+
+driver= webdriver.Chrome("C:/Users/Elias/Development/chromedriver.exe")
+
+driver.get("https://www.python.org/")
+search_bar=driver.find_element_by_name("q")
+print(search_bar.get_attribute("placeholder"))
+
+driver.quit()
+-----------------------------------------------------------------------
+from selenium import webdriver
+driver= webdriver.Chrome("C:/Users/Elias/Development/chromedriver.exe")
+driver.get( "https://www.python.org/")
+# python_homepage=driver.find_element_by_id("homepage")
+# print(python_homepage.size)
+# print(python_homepage.tag_name)
+
+# docs=driver.find_element_by_css_selector(" .documentation-widget a")
+# print(docs.text)
+
+bug_link=driver.find_element_by_xpath('//*[@id="site-map"]/div[2]/div/ul/li[3]/a')
+print(bug_link.text)
+
+driver.quit()
+
+
+# driver.quit()
+--------------------------------------------------------------------------
