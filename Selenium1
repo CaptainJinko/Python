@@ -83,3 +83,45 @@ print(events)
 driver.quit()
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+chrome_driver_path = "C:/Users/Elias/Development/chromedriver.exe"
+driver = webdriver.Chrome(executable_path=chrome_driver_path)
+driver.get("https://www.python.org/")
+
+event_times = driver.find_elements_by_css_selector(".event-widget time")
+event_name = driver.find_elements_by_css_selector(".event-widget li a")
+events = {}
+for n in range(len(event_times)):
+    events[n] = {
+        "time": event_times[n].text,
+        "name": event_name[n].text,
+
+    }
+print(events)
+driver.quit()
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+from selenium import webdriver
+
+driver_chrome_path = "C:/Users/Elias/Development/chromedriver.exe"
+driver = webdriver.Chrome(executable_path=driver_chrome_path)
+wike_web = driver.get("https://www.wikipedia.org/wiki/Main_Page")
+
+wike_number = driver.find_element_by_xpath('//*[@id="articlecount"]/a[1]')
+print(wike_number.text)
+
+driver.quit()
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+from selenium import webdriver
+
+driver_chrome_path = "C:/Users/Elias/Development/chromedriver.exe"
+driver = webdriver.Chrome(executable_path=driver_chrome_path)
+wike_web = driver.get("https://www.wikipedia.org/wiki/Main_Page")
+
+wiki_page=driver.find_element_by_css_selector("#articlecount a ")
+print(wiki_page.text)  
+
+driver.quit()
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#methods only for links
+All_portals=driver.find_element_by_link_text("All portals")
+All_portals.click()
