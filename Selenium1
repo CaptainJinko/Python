@@ -33,6 +33,8 @@ driver.get("https://www.python.org/")
 search_bar=driver.find_element_by_name("q")
 print(search_bar.get_attribute("placeholder"))
 
+
+
 driver.quit()
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 from selenium import webdriver
