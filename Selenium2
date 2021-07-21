@@ -1,0 +1,22 @@
+#Import selenium pakage 
+#import the below selenium package
+from selenium.webdriver.common.keys import Keys
+
+#how to fill form and click get selenium to click on it 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+driver_chrome_path = "C:/Users/Elias/Development/chromedriver.exe"
+driver = webdriver.Chrome(executable_path=driver_chrome_path)
+wike_web = driver.get("http://secure-retreat-92358.herokuapp.com/") //inpect the website 
+
+first_Name = driver.find_element_by_name("fName")
+first_Name.send_keys("Elias")
+last_Name = driver.find_element_by_name("lName")
+last_Name.send_keys("Jinko")
+email = driver.find_element_by_name("email")
+email.send_keys("pythonicom@gmail.com")
+Submit_button=driver.find_element_by_css_selector("form button")
+Submit_button.click()
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
