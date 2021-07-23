@@ -1,0 +1,18 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
+
+chrome_driver_path = "C:/Users/Elias/Development/chromedriver.exe"
+driver = webdriver.Chrome(executable_path=chrome_driver_path)
+driver.get(
+    "https://www.linkedin.com/login?emailAddress=&fromSignIn=&fromSignIn=true&session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fjobs%2Fsearch%2F%3FgeoId%3D102011674%26location%3DAmsterdam%252C%2520North%2520Holland%252C%2520Netherlands&trk=public_jobs_nav-header-signin")
+
+user_name = driver.find_element_by_id("username")
+user_name.send_keys("eliasschiedam@gmail.com")
+password = driver.find_element_by_id("password")
+password.send_keys("zamqras321#")
+
+# wait for the next page to laod
+time.sleep(5)
+log_in = driver.find_element_by_xpath('//*[@id="organic-div"]/form/div[3]/button')
+log_in.click()
