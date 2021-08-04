@@ -1,0 +1,30 @@
+
+#https://flask.palletsprojects.com/en/1.1.x/quickstart/
+1-The next the light bulb, you see the red lines click on it to install
+2-To install a package in window, go to File/settings/your project/python 
+interpreter/click+ button/Type the name of the package/
+3-To the terminal/ pip install Flask 
+example of Flask App
+hello.py
+from flask import Flask
+
+app = Flask(__name__)
+
+
+@app.route('/')
+def hello():
+    return 'Hello, World!'
+
+To run Flask application, we need to create evironment variable
+1- set FLASK_APP=hello.py     //hello.py is the name our project
+
+with window PowerShell
+
+$env:FLASK_APP ="hello.py"
+python -m flask run 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+ 
