@@ -23,7 +23,40 @@ with window PowerShell
 $env:FLASK_APP ="hello.py"
 python -m flask run 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Instead of using command line 
+$env:FLASK_APP="hello.py"
+python -m flask run 
 
+#we use the following to start our project in the main.py 
+from flask import Flask
+
+app = Flask(__name__)
+
+print(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World! of python'
+
+
+if __name__ == "__main__":
+    app.run()
+
+and click on just run on main.py just normal python execution code to the server address and we 
+dont need ctrl + c to stop the programm,e just click on the stop button 
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World! of python'
+
+
+if __name__ == "__main__":
+    app.run()
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
 
 
 
