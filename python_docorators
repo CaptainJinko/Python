@@ -1,5 +1,16 @@
+First class objects in a language are handled uniformly throughout. They may be stored in data structures, passed as arguments, or used in control structures.
+A programming language is said to support first-class functions if it treats functions as first-class objects. Python supports the concept of First Class functions.
+
+Properties of first class functions:
+
+A function is an instance of the Object type.
+You can store the function in a variable.
+You can pass the function as a parameter to another function.
+You can return the function from a function.
+You can store them in data structures such as hash tables, lists, …
 ## ********Day 54 Start**********
 ## Functions can have inputs/functionality/output
+
 def add(n1, n2):
     return n1 + n2
 
@@ -14,11 +25,118 @@ def divide(n1, n2):
 
 ##Functions are first-class objects, can be passed around as arguments e.g. int/string/float etc.
 
-def calculate(calc_function, n1, n2):
-    return calc_function(n1, n2)
+def calculate(calc_function, n1, n2):  #calc_function is passed as ana argument, You can pass the function as a parameter to another function.
+    return calc_function(n1, n2)       
 
 result = calculate(add, 2, 3)
 print(result)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Functions are objects: Python functions are first class objects. In the example below, we are assigning function to a variable. 
+This assignment doesn’t call the function. It takes the function object referenced by shout and creates a second name pointing to it, yell or Good_bye
+#A
+# Python program to illustrate functions
+# can be treated as objects
+
+def shout(text):
+    return text.upper()
+
+
+print(shout("hello"))
+
+yell = shout
+print(yell("hello"))
+********************************************************
+#B
+# Python program to illustrate functions
+# can be treated as objects
+
+def good_bye(greetings):
+    return greetings.upper()
+
+print(good_bye("Hello Good morning"))
+
+salut = good_bye
+print(salut("How are doing"))
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2.Functions can be passed as arguments to other functions: Because functions are objects we can pass them as arguments to other functions. 
+Functions that can accept other functions as arguments are also called higher-order functions. In the example below, we have created a function 
+greet which takes a function as an argument.
+
+# Python program to illustrate functions
+# can be passed as arguments to other functions
+def shout(text):
+	return text.upper()
+
+def whisper(text):
+	return text.lower()
+
+def greet(func):
+	# storing the function in a variable
+	greeting = func("""Hi, I am created by a function passed as an argument.""")
+	print (greeting)
+
+greet(shout)
+greet(whisper)
+*******************************************
+def my_fName(text):
+    return text
+
+
+def my_lName(text):
+    return text.upper()
+
+
+def my_completeName(func_complete):
+    myfull = func_complete("My full name is Elias Jinko")
+    print(myfull)
+
+
+my_completeName(my_fName)
+
+my_completeName(my_lName)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3. Functions can return another function: Because functions are objects we can return a function from another function. 
+In the below example, the create_adder function returns adder function.
+
+# Python program to illustrate functions
+# Functions can return another function
+
+def create_adder(x):
+	def adder(y):
+		return x+y
+
+	return adder
+
+add_15 = create_adder(15)
+
+print (add_15(10))
+********************************************
+def create_adder(x):
+    def adder(y):
+        return x + y
+
+    return adder
+
+
+add_all = create_adder(25)
+
+print(add_all(25))
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Functions can be returned from other functions
+def outer_function():
+    print("I'm outer")
+
+    def nested_function():
+        print("I'm inner")
+
+    return nested_function
+
+inner_function = outer_function()
+inner_function()
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ##Functions can be nested in other functions
 
@@ -32,45 +150,9 @@ def outer_function():
 
 outer_function()
 
-## Functions can be returned from other functions
-def outer_function():
-    print("I'm outer")
-
-    def nested_function():
-        print("I'm inner")
-
-    return nested_function
-
-inner_function = outer_function()
-inner_function
-
-
-## Simple Python Decorator Functions
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# ## Simple Python Decorator Functions
 import time
-
-def delay_decorator(function):
-    def wrapper_function():
-        time.sleep(2)
-        #Do something before
-        function()
-        function()
-        #Do something after
-    return wrapper_function
-
-@delay_decorator
-def say_hello():
-    print("Hello")
-
-#With the @ syntactic sugar
-@delay_decorator
-def say_bye():
-    print("Bye")
-
-#Without the @ syntactic sugar
-def say_greeting():
-    print("How are you?")
-decorated_function = delay_decorator(say_greeting)
-decorated_function()
 
 def delay_decorator(function):
     def wrapper_function():
