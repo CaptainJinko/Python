@@ -25,7 +25,7 @@ def divide(n1, n2):
 
 ##Functions are first-class objects, can be passed around as arguments e.g. int/string/float etc.
 
-def calculate(calc_function, n1, n2):  #calc_function is passed as ana argument, You can pass the function as a parameter to another function.
+def calculate(calc_function, n1, n2):  #calc_function is passed as aN argument, You can pass the function as a parameter to another function.
     return calc_function(n1, n2)       
 
 result = calculate(add, 2, 3)
