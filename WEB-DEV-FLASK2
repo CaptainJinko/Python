@@ -1,0 +1,17 @@
+In order to activate automatic reloader so that whenever we edit off a file and hit save, it is 
+going to reload our server it also anable debug mode on the flask application
+
+if __name__ == "__main__":
+    app.run()
+
+in piece of code above app.run() should be 
+
+if __name__ == "__main__":
+    app.run(debug=True)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+@app.route("/username/<path:name>/<int:number>")
+def greet(name, number):
+    return f"Hello there we are here! {name} you are {number} years old "
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
