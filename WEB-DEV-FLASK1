@@ -1,6 +1,6 @@
 
 #https://flask.palletsprojects.com/en/1.1.x/quickstart/
-1-The next the light bulb, you see the red lines click on it to install
+1-The next light bulb, you see the red lines click on it to install
 2-To install a package in window, go to File/settings/your project/python 
 interpreter/click+ button/Type the name of the package/
 3-To the terminal/ pip install Flask 
@@ -43,7 +43,7 @@ if __name__ == "__main__":
     app.run()
 
 and click on just run on main.py just normal python execution code to the server address and we 
-dont need ctrl + c to stop the programm,e just click on the stop button 
+dont need ctrl + c to stop the programme just click on the stop button 
 from flask import Flask
 
 app = Flask(__name__)
@@ -52,11 +52,10 @@ app = Flask(__name__)
 def hello_world():
     return 'Hello, World! of python'
 
-
 if __name__ == "__main__":
     app.run()
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- from flask import Flask
+from flask import Flask
 
 app = Flask(__name__)
 
