@@ -15,3 +15,45 @@ def greet(name, number):
     return f"Hello there we are here! {name} you are {number} years old "
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+@app.route("/username/<name>/<int:number>")
+def greet(name, number):
+    return f" Hi {name} is {number} years of age!"
+----------------------------------------------------------------------
+#the below site is a resouces ofr animated images/copy-link/copy the url and paste into the img 
+#src
+#https://giphy.com/gifs/gifsthatkeepongiving-gifs-that-keep-on-giving-hvS1eKlR75hMr0l7VJ/links
+-----------------------------------------------------------------------------------------
+@app.route("/")
+def hello():
+    return ' <h1 style="text-align: center"> Hello World! </h1>' \
+           ' <p>This is a paragraph <p>' \
+           '<img src="https://media.giphy.com/media/hvS1eKlR75hMr0l7VJ/giphy.gif" width=200px>' \
+
+
+--------------------------------------------------------------------------------------------
+#complete code 
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return ' <h1 style="text-align: center"> Hello World! </h1>' \
+           ' <p>This is a paragraph <p>' \
+           '<img src="https://media.giphy.com/media/hvS1eKlR75hMr0l7VJ/giphy.gif" width=200px>' \
+
+# Different routes using the app.route decorator
+@app.route("/bye")
+def bold():
+    return "<b>Bye </b>"
+
+
+# Creating variable paths and converting the path to a specific data type
+
+@app.route("/username/<name>/<int:number>")
+def greet(name, number):
+    return f" Hi {name} is {number} years of age!"
+
+if __name__ == "__main__":
+    # Run the app in debug mode to auto-reload
+    app.run(debug=True)
