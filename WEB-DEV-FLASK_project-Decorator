@@ -1,0 +1,30 @@
+from flask import Flask
+import random
+
+random_number = random.randint(0, 9)
+print(random_number)
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "<h1 style='color:blue'>Guess a number between 1 and 9 </h1>" \
+           "<img src=https://media.giphy.com/media/vhldLvLuRLcVVu0zmO/giphy.gif>"
+
+
+@app.route("/<int:guess>")
+def guess_number(guess):
+    if guess > random_number:
+        return "<h1 style='color: black'>Too high Try again</h1>" \
+               "<img src='https://media.giphy.com/media/3o6ZtaO9BZHcOjmErm/giphy.gif'/>"
+    elif guess < random_number:
+        return "<h1 style='color: red'> Hahaha too low try again</h1>" \
+               "<img src=https://media.giphy.com/media/3oz8xJ89YABk7vuZLa/giphy.gif>"
+    else:
+        return "<h1 style='color:green'>Yes bingo you found me </h1>" \
+               "<img src='https://media.giphy.com/media/4T7e4DmcrP9du/giphy.gif'/>"
+
+
+if __name__ == "__main__":
+
+    app.run(debug=True)
