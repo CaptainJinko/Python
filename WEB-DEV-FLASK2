@@ -1,5 +1,5 @@
-In order to activate automatic reloader so that whenever we edit off a file and hit save, it is 
-going to reload our server it also anable debug mode on the flask application
+#In order to activate automatic reloader so that whenever we edit a file and hit save, it is going to reload our server it also anable debug mode "on" 
+#the flask application
 
 if __name__ == "__main__":
     app.run()
@@ -18,19 +18,17 @@ def greet(name, number):
 @app.route("/username/<name>/<int:number>")
 def greet(name, number):
     return f" Hi {name} is {number} years of age!"
-----------------------------------------------------------------------
-#the below site is a resouces ofr animated images/copy-link/copy the url and paste into the img 
-#src
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#The below site is a resouces of animated images/copy-link/copy the url and paste into the img  src
 #https://giphy.com/gifs/gifsthatkeepongiving-gifs-that-keep-on-giving-hvS1eKlR75hMr0l7VJ/links
------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 @app.route("/")
 def hello():
     return ' <h1 style="text-align: center"> Hello World! </h1>' \
            ' <p>This is a paragraph <p>' \
            '<img src="https://media.giphy.com/media/hvS1eKlR75hMr0l7VJ/giphy.gif" width=200px>' \
 
-
---------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #complete code 
 from flask import Flask
 
