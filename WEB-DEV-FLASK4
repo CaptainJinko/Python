@@ -1,2 +1,41 @@
 #site where you can download template and modify to your linking 
 #https://html5up.net/paradigm-shift
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#main.py
+#How to code a dynamic year into the footer
+from flask import Flask, render_template
+import random
+from datetime import datetime
+
+app = Flask(__name__)
+
+
+@app.route('/')
+def home():
+    current_year = datetime.now().year
+    random_number = random.randint(1, 10)
+    # footer = "Placeholder string just for debugging"
+
+    return render_template('index.html', current_time=current_year,   num=random_number)
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#index.htlm
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Website</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <h2>{{6 *30}}</h2>
+    <h3>Random Number:{{num}}</h3>
+    <footer> @copy:{{current_time}} Built by Elias At The Set</footer>
+</body>
+</html>
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
